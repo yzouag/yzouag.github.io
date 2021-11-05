@@ -22,7 +22,7 @@ subtitle                 : "this is a toy version"
 name                     : "Yiwen ZOU"
 description              : "This is my personal homepage, and I will share my thoughts and projects here!"
 url                      : "https://yzouag.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
+baseurl                  : ""
 repository               : "yzouag/yzouag.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -104,9 +104,9 @@ analytics:
 author:
   name             : "Wilson ZOU"
   avatar           : "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "I am currently a final year CSE student in HKUST. My interest field is artificial intelligence and machine learning."
   location         : "Hong Kong SAR, China"
-  email            : "yzouag@connect.ust.hk"
+  # email            : "yzouag@connect.ust.hk"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -122,10 +122,13 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://yzouag.github.com/"
+      url: "https://github.com/yzouag"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+    - label: "NetEase Music"
+      icon: "fas fa-music"
+      url: "https://music.163.com/#/user/home?id=303522934"
 
 # Site Footer
 footer:
@@ -138,7 +141,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "yzouag@connect.ust.hk"
+      url: "https://github.com/yzouag"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -251,6 +254,7 @@ whitelist:
 category_archive:
   type: liquid
   path: /categories/
+
 tag_archive:
   type: liquid
   path: /tags/
@@ -274,6 +278,17 @@ compress_html:
   ignore:
     envs: development
 
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:path/
+  tech-reviews:
+    output: true
+    permalink: /:collection/:path/
+  course-summary:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -281,6 +296,46 @@ defaults:
   - scope:
       path: ""
       type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+  # _tech-reviews
+  - scope:
+      path: ""
+      type: tech-reviews
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+  # _course-summary
+  - scope:
+      path: ""
+      type: course-summary
     values:
       layout: single
       author_profile: true
