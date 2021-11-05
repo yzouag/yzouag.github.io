@@ -1,10 +1,14 @@
 # main links
 main:
-  - title: About Me
-    url: /about
+  - title: Home
+    url: /
+  - title: Post
+    url: /categories
   - title: Project
     url: /projects
   - title: "Techs Review"
     url: /tech-reviews
   - title: "CS courses"
     url: /course-summary
+  - title: About Me
+    url: /about
