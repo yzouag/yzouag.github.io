@@ -1,10 +1,9 @@
 ---
-title: Course Summary
-layout: collection
-permalink: /course-summary/
-collection: course-summary
-entries_layout: grid
-classes: wide
+title: Academy & Research
+layout: category
+permalink: /categories/cs/
+entries_layout: list
+taxonomy: cs
 ---
 
-Sample document listing for the collection `_course-summary`.
+This part is to put my summary about research papers and CS courses.

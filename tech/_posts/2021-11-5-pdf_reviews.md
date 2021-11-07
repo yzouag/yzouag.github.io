@@ -1,5 +1,9 @@
 ---
-title: "PDF Reviews"
+title: "6 PDF Readers Reviews"
+header:
+  image: /assets/images/pdf.png
+  image_description: "PDF galleries from Microsoft Store"
+  caption: "PDF galleries from Microsoft Store"
 gallery:
   - url: /assets/images/bookxnote.png
     image_path: /assets/images/bookxnote.png
@@ -19,19 +23,21 @@ gallery1:
     alt: "image for xodo"
     title: "Xodo image"
 read_time: true
+toc: true
+toc_label: "List of content"
+sidebar:
+  nav: "docs"
 ---
 
-# 6款我常用pdf的比较
-
-### 前言
+# 前言
 
 pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅是一个学习工具。对我来说，它的大部分使用场景都是读paper或者是读课件读textbook，白嫖惯了不怎么有买纸质书的习惯。我也有ipad，但是notability用来记笔记我的字太丑，加上每次强迫症画条直线都要半天，标注结束都忘记自己要干嘛了。因此，我对pdf阅读器的要求主要集中在阅读体验和标注的便捷上，对于其他编辑pdf的功能，我暂时并不需要。在大学四年的学习中，我使用过许多的pdf浏览器，在此我把他们的最新版本都重新下载了一遍，也算是重温旧梦吧^_^
 
 ---
 
-### 正文
+# 正文
 
-#### 1. BookxNote Pro
+## 1. BookxNote Pro
 
 {% include gallery caption="Screenshot from BookxNote Pro" %}
 
@@ -44,7 +50,7 @@ pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅�
 
 ---
 
-#### 2. Xodo PDF Reader
+## 2. Xodo PDF Reader
 
 {% include gallery id="gallery1" caption="Screenshot from Xodo" %}
 
@@ -58,7 +64,7 @@ pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅�
 
 ---
 
-#### 3. Microsoft Edge浏览器
+## 3. Microsoft Edge浏览器
 
 ![](\assets\images\edge.png)
 
@@ -72,7 +78,7 @@ pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅�
 
 ---
 
-#### 4. Foxit PDF Reader (福昕)
+## 4. Foxit PDF Reader (福昕)
 
 ![](\assets\images\foxit.png)
 
@@ -87,7 +93,7 @@ pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅�
 
 ---
 
-#### 5. PDF X-Change Editor
+## 5. PDF X-Change Editor
 
 ![](\assets\images\xchange.png)
 
@@ -96,7 +102,7 @@ pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅�
 
 ---
 
-#### 6. Adobe Acrobat PDF
+## 6. Adobe Acrobat PDF
 
 ![](\assets\images\adobe.png)
 

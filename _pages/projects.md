@@ -1,10 +1,9 @@
 ---
-title: Project
-layout: collection
-permalink: /projects/
-collection: projects
-entries_layout: grid
-classes: wide
+title: Projects
+layout: category
+permalink: /categories/project/
+entries_layout: list
+taxonomy: project
 ---
 
-Sample document listing for the collection `_projects`.
+This part is to put a brief intro to all my projects.

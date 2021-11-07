@@ -2,13 +2,29 @@
 main:
   - title: Home
     url: /
-  - title: Post
+  - title: Posts
     url: /categories
   - title: Project
-    url: /projects
+    url: /categories/project/
   - title: "Techs Review"
-    url: /tech-reviews
-  - title: "CS courses"
-    url: /course-summary
+    url: /categories/tech/
+  - title: "Academy & Research"
+    url: /categories/cs/
   - title: About Me
     url: /about
+
+docs:
+  - title: links
+    children:
+    - title: Home
+      url: /
+    - title: Post
+      url: /categories
+    - title: Project
+      url: /projects
+    - title: "Techs Review"
+      url: /tech-reviews
+    - title: "CS courses"
+      url: /course-summary
+    - title: About Me
+      url: /about

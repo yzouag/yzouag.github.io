@@ -1,10 +1,9 @@
 ---
 title: Tech Review
-layout: collection
-permalink: /tech-reviews/
-collection: tech-reviews
-entries_layout: grid
-classes: wide
+layout: category
+permalink: /categories/tech/
+entries_layout: list
+taxonomy: tech
 ---
 
-Sample document listing for the collection `_tech-reviews`.
+This part is to put my opinions or feelings of some electronic devices or softwares.
