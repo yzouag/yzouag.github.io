@@ -1,25 +1,25 @@
 ---
 title: "6 PDF Readers Reviews"
 header:
-  image: /assets/images/pdf.png
+  image: /assets/images/pdf_review/pdf.png
   image_description: "PDF galleries from Microsoft Store"
   caption: "PDF galleries from Microsoft Store"
 gallery:
-  - url: /assets/images/bookxnote.png
-    image_path: /assets/images/bookxnote.png
+  - url: /assets/images/pdf_review/bookxnote.png
+    image_path: /assets/images/pdf_review/bookxnote.png
     alt: "image for bookxnote"
     title: "BookXnote Pro"
-  - url: /assets/images/bookxnote1.png
-    image_path: /assets/images/bookxnote.png
+  - url: /assets/images/pdf_review/bookxnote1.png
+    image_path: /assets/images/pdf_review/bookxnote.png
     alt: "image for bookxnote"
     title: "BookXnote Pro"
 gallery1:
-  - url: /assets/images/xodo.png
-    image_path: /assets/images/xodo.png
+  - url: /assets/images/pdf_review/xodo.png
+    image_path: /assets/images/pdf_review/xodo.png
     alt: "image for xodo"
     title: "Xodo image"
-  - url: /assets/images/xodo1.png
-    image_path: /assets/images/xodo1.png
+  - url: /assets/images/pdf_review/xodo1.png
+    image_path: /assets/images/pdf_review/xodo1.png
     alt: "image for xodo"
     title: "Xodo image"
 read_time: true
@@ -66,9 +66,9 @@ pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅�
 
 ## 3. Microsoft Edge浏览器
 
-![](\assets\images\edge.png)
+![](\assets\images\pdf_review\edge.png)
 
-![](\assets\images\edge1.png)
+![](\assets\images\pdf_review\edge1.png)
 
 - 旧版edge永远滴神~~ 可惜更新了之后拉跨了不少。但作为windows原装的pdf浏览器，已经远超隔壁chrome重度残疾的pdf reader了
 - edge的滑动速度是最快的，同时想要打开文件的时候直接把文件往浏览器里拖就可以，对于可以用电脑的开卷考试，绝对能帮你最快找到答案
@@ -80,9 +80,9 @@ pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅�
 
 ## 4. Foxit PDF Reader (福昕)
 
-![](\assets\images\foxit.png)
+![](\assets\images\pdf_review\foxit.png)
 
-![](\assets\images\foxit1.png)
+![](\assets\images\pdf_review\foxit1.png)
 
 - 大一的时候使用的pdf浏览器，后来就被旧版edge和ipad给替代了，直到换了新的电脑，就彻底的被遗弃了。今天特地下回来再次体验一下。
 - 现代化的UI，配色和icon都非常讨人喜欢
@@ -95,7 +95,7 @@ pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅�
 
 ## 5. PDF X-Change Editor
 
-![](\assets\images\xchange.png)
+![](\assets\images\pdf_review\xchange.png)
 
 - 好吧其实这是一个editor不是reader了，放在这里和其他的比不太公平，但是这是一个免费的强大的pdf editor，所以还是记一下，将来说不定有用
 - 安装起来毫不流氓，UI也不是10年前的古董graphic设计
@@ -104,9 +104,9 @@ pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅�
 
 ## 6. Adobe Acrobat PDF
 
-![](\assets\images\adobe.png)
+![](\assets\images\pdf_review\adobe.png)
 
-![](\assets\images\adobe1.png)
+![](\assets\images\pdf_review\adobe1.png)
 
 - pdf界的开山鼻祖，的确是支持的最完善的一个了(当然得花钱)
 - 开启很迅速，同时在通过一大堆的设置之后，也能做到每次打开的页面都很干净
