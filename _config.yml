@@ -18,14 +18,14 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 locale                   : "en-US"
 title                    : "Wilson ZOU's Home Page"
 title_separator          : "-"
-subtitle                 : "this is a toy version"
+subtitle                 : "learning is a life-long journey"
 name                     : "Yiwen ZOU"
 description              : "This is my personal homepage, and I will share my thoughts and projects here!"
 url                      : "https://yzouag.github.io"
 baseurl                  : ""
 repository               : "yzouag/yzouag.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+# logo                     : "/assets/images/logo.png"
 masthead_title           : "Newbie for Techs"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -310,36 +310,36 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _projects
-  - scope:
-      path: ""
-      type: projects
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: false
-      related: true
-  # _tech-reviews
-  - scope:
-      path: ""
-      type: tech-reviews
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: false
-      related: true
-  # _course-summary
-  - scope:
-      path: ""
-      type: course-summary
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: false
-      related: true
+  # # _projects
+  # - scope:
+  #     path: ""
+  #     type: projects
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     read_time: true
+  #     comments: true
+  #     share: false
+  #     related: true
+  # # _tech-reviews
+  # - scope:
+  #     path: ""
+  #     type: tech-reviews
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     read_time: true
+  #     comments: true
+  #     share: false
+  #     related: true
+  # # _course-summary
+  # - scope:
+  #     path: ""
+  #     type: course-summary
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     read_time: true
+  #     comments: true
+  #     share: false
+  #     related: true
