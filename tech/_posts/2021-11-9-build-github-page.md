@@ -55,3 +55,47 @@ sidebar:
    ![](\assets\images\github_pages\screenshot7.png)
 
 现在的网页还是空空如也，但是你可以根据quick start guide的tutorial，自己来定制网页了。
+
+## 使用Jekyll本地调试网页
+
+如果说，每次我们改一点点东西，都需要push到GitHub上，等它build好才能看到效果，那速度也太慢了，所以我们可以在本地搭建一个测试环境，这样就只要一个功能完成再push一次，大大节约了我们debug的时间。
+
+这部分内容主要参照[Jekyll Doc](https://jekyllrb.com/docs/)编写，有兴趣的朋友也可以直接按照官网的教学来。
+
+因为我害怕环境之间的冲突，所以额外创建了一个WSL2的Ubuntu20.04LTS来搭建这个环境，windows和Mac上可能会有所不同。而且讲道理linux上装这些东西真的方便好多好多...
+
+1. 安装prerequisite：
+
+   ```bash
+   # 安装Ruby
+   sudo apt-get install ruby-full build-essential zlib1g-dev
+   
+   # 为避免在root user里安装Ruby Gems，可以把Gems装在home里
+   echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+   echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+   echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+   source ~/.bashrc
+   
+   # 前面都成功的话，就可以install jekyll和bundle了
+   gem install jekyll bundler
+   ```
+
+   
+
+2. 安装成功之后，就可以在本地build一个Jekyll project了：
+
+   ```bash
+   # clone 自己的repo
+   git@github.com:wilson99Z/wilson99Z.github.io.git
+   
+   # 在 http://localhost:4000 上试运行网站
+   cd USERNAME.github.io
+   bundle exec jekyll serve
+   
+   # 当然，如果想全新创建一个Jekyll project，执行如下命令，此时就会创建一个myblog的project
+   jekyll new myblog
+   ```
+
+## 结语
+
+到此我简单介绍了一下搭建一个Jekyll GitHub Pages，接下来的blogs我会具体介绍minimal mistake的一些具体的网页元素的使用方法。感谢你看到这里，点个赞再走吧>.<
