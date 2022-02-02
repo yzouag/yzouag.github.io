@@ -1,11 +1,10 @@
 # My Personal Home Page
 
-This is just a toy version, I will further improve my website during vacations.
-
 Hopefully I can make several parts of content in this webpage:
 
-- a about me session, for posting my personal intros and CV and other useful links
+- an about me session, for posting my personal intros and CV and other useful links
 - a project tab for listing all projects I made
+- a academy summary page, for course reviews and research results
 - a tech review page for sharing my thoughts on IT stuff
 - a blogging part for sharing my daily thoughts
 

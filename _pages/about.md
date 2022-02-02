@@ -28,3 +28,7 @@ I am interested in medical image analysis, or building intelligent system using 
 
 - Dean’s List for the School of Engineering
 - University’s Scholarship Scheme for Continuing Undergraduate Students in `2019-2020`, `2020-2021`, `2021-2022`
+
+## resume
+
+my CV is available [here](https://drive.google.com/file/d/1a9M68_AJVVw_Ih1m5iWVT_QE2Zv5lJqw/view?usp=sharing)
