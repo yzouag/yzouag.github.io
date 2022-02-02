@@ -1,9 +1,9 @@
 ---
 title: "My recommendation for 15 chrome extensions"
-# header:
-#   image: /assets/images/pdf_review/pdf.png
-#   image_description: "PDF galleries from Microsoft Store"
-#   caption: "PDF galleries from Microsoft Store"
+header:
+  teaser: assets/images/chrome_extensions/chrome_extension_store.png
+  image: assets/images/chrome_extensions/chrome_extension_store.png
+  caption: "Google Chome's Web Store"
 toc: true
 toc_label: "List of content"
 sidebar:
