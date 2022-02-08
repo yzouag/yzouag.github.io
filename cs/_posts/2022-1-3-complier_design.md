@@ -1,5 +1,6 @@
 ---
 title: "HKUST COMP4901U Computer Language Processing and Compiler Design"
+excerpt: compiler is a very important course as a CS student, though my performance is bad in this course, I do not regret to take it...
 header:
   teaser: /assets/images/compiler/header.png
 sidebar:
