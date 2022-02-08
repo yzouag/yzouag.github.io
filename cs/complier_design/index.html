@@ -1,0 +1,2636 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>HKUST COMP4901U Computer Language Processing and Compiler Design - Wilson ZOU’s Home Page</title>
+<meta name="description" content="compiler is a very important course as a CS student, though my performance is bad in this course, I do not regret to take it…">
+
+
+  <meta name="author" content="Wilson ZOU">
+  
+  <meta property="article:author" content="Wilson ZOU">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Wilson ZOU's Home Page">
+<meta property="og:title" content="HKUST COMP4901U Computer Language Processing and Compiler Design">
+<meta property="og:url" content="https://yzouag.github.io/cs/complier_design/">
+
+
+  <meta property="og:description" content="compiler is a very important course as a CS student, though my performance is bad in this course, I do not regret to take it…">
+
+
+
+  <meta property="og:image" content="https://yzouag.github.io/assets/images/compiler/header.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-01-03T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://yzouag.github.io/cs/complier_design/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Yiwen ZOU",
+      "url": "https://yzouag.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Wilson ZOU's Home Page Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- Mathjax Support -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+</script>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/website_icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/website_icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/website_icon/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/website_icon/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/website_icon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/website_icon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/website_icon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/rabbit.png" alt="Newbie for Techs"></a>
+        
+        <a class="site-title" href="/">
+          Newbie for Techs
+          <span class="site-subtitle">learning is a life-long journey</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/project/">Project</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/tech/">Techs Review</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/cs/">Academy & Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about">About Me</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://yzouag.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Wilson ZOU" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://yzouag.github.io/" itemprop="url">Wilson ZOU</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am currently a final year CSE student in HKUST and now is eagerly looking for a graduate school</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Hong Kong SAR, China</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:3310189877@qq.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/yzouag" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://music.163.com/#/user/home?id=303522934" rel="nofollow noopener noreferrer me"><i class="fas fa-music" aria-hidden="true"></i><span class="label">NetEase Music</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">links</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/">Home</a></li>
+          
+            <li><a href="/categories">Post</a></li>
+          
+            <li><a href="/projects">Project</a></li>
+          
+            <li><a href="/tech-reviews">Techs Review</a></li>
+          
+            <li><a href="/course-summary">CS courses</a></li>
+          
+            <li><a href="/about">About Me</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="HKUST COMP4901U Computer Language Processing and Compiler Design">
+    <meta itemprop="description" content="compiler is a very important course as a CS student, though my performance is bad in this course, I do not regret to take it…">
+    <meta itemprop="datePublished" content="2022-01-03T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://yzouag.github.io/cs/complier_design/" class="u-url" itemprop="url">HKUST COMP4901U Computer Language Processing and Compiler Design
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          28 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h2 id="introduction">introduction</h2>
+
+<ul>
+  <li>
+    <p>a <strong>language</strong> can be natural language, computer language, language of mathematics</p>
+
+    <p><img src="/assets/images/compiler/p1.png" alt="" /></p>
+  </li>
+  <li>
+    <p>processing general-purpose programming languages:</p>
+
+    <ul>
+      <li>interpreter: execute instructions while traversing the program (Python)</li>
+      <li>compiler: traverse program, generate executable code to run later (Rust, C)</li>
+    </ul>
+  </li>
+  <li>
+    <p>general compiler organization</p>
+
+    <p><img src="/assets/images/compiler/p2.png" alt="" /></p>
+
+    <ul>
+      <li>source code: for programmers, higher level for abstraction and productiveness</li>
+      <li>target code: efficiently run on hardware, low level</li>
+    </ul>
+  </li>
+  <li>
+    <p>front end &amp; back end in compiler</p>
+
+    <p>front-end —————————————————————————–&gt; back-end</p>
+
+    <p>lexical analyzer -&gt; parser -&gt; name analyzer -&gt; type checker -&gt; intermediate code generator -&gt; JIT compiler or platform-specific back end</p>
+  </li>
+  <li>
+    <p>program first to a tree structure, <strong>Abstract Syntax Tree (AST)</strong></p>
+
+    <ul>
+      <li>node represents arithmetic operations, statements, blocks</li>
+      <li>leaves represent constants, variables, methods</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="theory-of-formal-languages">theory of formal languages</h2>
+
+<h3 id="word">word</h3>
+
+<h4 id="define-of-word">define of word</h4>
+
+<p>Let A be an <strong>alphabet</strong> {a, b, c, …}</p>
+
+<p>define words of length n, as A^n^, as follow:</p>
+
+<ul>
+  <li>A^0^ = ${\epsilon}$, only one word of length 0</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>For n &gt; 0, $A^n = {aw</td>
+          <td>w\in A^{n-1}}$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>set of all words: $A^* = \cup_{n \ge 0}A^n$</p>
+
+<h4 id="equivalent-word">equivalent word</h4>
+
+<p>Let $u,v \in A^*$, then u=v if and only if</p>
+
+<ol>
+  <li>$u=\epsilon \text{ and } v = \epsilon$; or</li>
+  <li>$u=au^\prime ~ and ~ v = av^\prime ~ where ~ u^\prime = v^\prime$</li>
+</ol>
+
+<h4 id="theorem-structural-induction-of-words">Theorem (Structural induction of words)</h4>
+
+<p>$P(\epsilon)$ , P(u) implies P(au), then for any word a, P(a) is correct</p>
+
+<h4 id="word-concatenation">word concatenation</h4>
+
+<p>$ u \cdot v = \left{ 
+  \begin{array}{ c l }
+    v &amp;  \text{if } u=\epsilon <br />
+    a(u^\prime \cdot v) &amp;  \text{if } u = au^\prime
+  \end{array}
+\right. $</p>
+
+<p>for easy notation, uv means word concatenation</p>
+
+<p><img src="/assets/images/compiler/p3.png" alt="" /></p>
+
+<h4 id="free-monoid-of-words">free monoid of words</h4>
+
+<p>an algebraic structure, word monoid satisfies two additional properties:</p>
+
+<ul>
+  <li>left cancellation law, if wu = wv, then u = v</li>
+  <li>right cancellation law</li>
+</ul>
+
+<h4 id="reversal">reversal</h4>
+
+<p><img src="/assets/images/compiler/p4.png" alt="" /></p>
+
+<h4 id="prefix-suffix-and-slice">prefix, suffix, and slice</h4>
+
+<p>easy as name extends</p>
+
+<h3 id="language">language</h3>
+
+<h4 id="define-of-language">define of language</h4>
+
+<p>a language over alphabet A is a set $L \subseteq A^\prime$, for example A = {0, 1}</p>
+
+<ul>
+  <li>a finite language like L={0, 1, 01, 010}, or the empty language $\empty$</li>
+  <li>infinite but very difficult to describe</li>
+  <li>infinite but having some nice structure, a pattern for description precisely</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>for example, $L_2=\set{01, 0101, 010101, …} = \set{(01)^n</td>
+      <td>n\ge1}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>language is a set, we have union, intersection, and other set operations</p>
+
+<h4 id="language-operations">language operations</h4>
+
+<p><img src="/assets/images/compiler/p5.png" alt="" /></p>
+
+<p><img src="/assets/images/compiler/p6.png" alt="" /></p>
+
+<h4 id="monoid-of-language">monoid of language</h4>
+
+<p>two conditions for monoid</p>
+
+<ul>
+  <li>a neutral element, $L\set{\epsilon}=L,\set{\epsilon}L=L, \text{ so } \set{\epsilon}$ is one</li>
+  <li>associative law: we need $L_1 \cdot (L_2 \cdot L_3)=(L_1 \cdot L_2) \cdot L_3$</li>
+</ul>
+
+<p><img src="/assets/images/compiler\Snipaste_2021-12-09_22-17-51.png" style="zoom:50%; float: left" /></p>
+
+<p>note: no cancellation law! $L_1\empty = \empty = L_2 \empty$ but not necessarily L1=L2</p>
+
+<h4 id="represent-programming-language">represent programming language</h4>
+
+<p>in general, some formal languages are not <strong><em>recursively enumerable sets</em></strong></p>
+
+<p>a language $L \subseteq A^<em>$ is given by its <strong>characteristic function</strong> $f_L : A^</em>\to \set{0,1}$, defined by f~L~(w) = 1 for w in L, and 0 for w not in L</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>for example, for $L_2=\set{01, 0101, 010101, …} = \set{(01)^n</td>
+      <td>n\ge1}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f</span><span class="o">(</span><span class="n">w</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="n">w</span> <span class="k">match</span>
+    <span class="k">case</span> <span class="nc">Cons</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="nc">Cons</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="nc">Nil</span><span class="o">()))</span> <span class="k">=&gt;</span> <span class="kc">true</span>
+    <span class="k">case</span> <span class="nc">Cons</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="nc">Cons</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">wRest</span><span class="o">))</span> <span class="k">=&gt;</span> <span class="nf">f</span><span class="o">(</span><span class="n">wRest</span><span class="o">)</span>
+    <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="kc">false</span>
+
+<span class="k">val</span> <span class="nv">L2</span> <span class="k">=</span> <span class="nc">Lang</span><span class="o">(</span><span class="n">f</span><span class="o">)</span>
+<span class="nv">L2</span><span class="o">.</span><span class="py">contains</span><span class="o">(</span><span class="mi">0</span><span class="o">::</span><span class="mi">1</span><span class="o">::</span><span class="mi">0</span><span class="o">::</span><span class="mi">1</span><span class="o">::</span><span class="nc">Nil</span><span class="o">())</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<h4 id="kleene-star-repetition-of-a-language">Kleene Star, repetition of a language</h4>
+
+<p><img src="/assets/images/compiler\Snipaste_2021-12-09_22-38-30.png" alt="" /></p>
+
+<h2 id="regular-expression">regular expression</h2>
+
+<p>one way to denote (often infinite) languages</p>
+
+<h4 id="definition">definition</h4>
+
+<p>a regular expression e is built from:</p>
+
+<ul>
+  <li>$\empty$, corresponds to the empty language</li>
+  <li>$\epsilon$, corresponding to $\set{\epsilon}$</li>
+  <li>a, b, etc. corresponding to $\set{a}, \set{b},…$</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>e1</td>
+          <td>e2 corresponding to $L_{e1} \cup L_{e2}$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>e1e2, corresponding to $L_{e1} \cdot L_{e2}$</li>
+  <li>e* corresponding to $L_{e}^{*}$</li>
+</ul>
+
+<h4 id="regular-expression-operators">regular expression operators</h4>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[a…z] = a</td>
+          <td>b</td>
+          <td>…</td>
+          <td>z</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>e^?^ = e</td>
+          <td>$\epsilon$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>e^+^ = e e^*^</li>
+  <li>e^k..<em>^ = e^k^ e^</em>^ and e^p..q^ = e^p^ (e^?^)^q-p^</li>
+  <li>!e, complementary, no obvious translation from base oprators</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>e1 &amp; e2 = ! (!e1</td>
+          <td>!e2), denoting $L_{e1} \cap L_{e2}$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h4 id="properties-of-regular-expression">properties of regular expression</h4>
+
+<p>emptiness, inclusion, disjointness</p>
+
+<h2 id="lexical-analysis">lexical Analysis</h2>
+
+<p>input: character streams. res = 14 + arg * 3</p>
+
+<p>output: token streams. “res”, “=”, “14”, “+”, “arg”, “*”, “3”</p>
+
+<p>key ideas:</p>
+
+<ul>
+  <li>small memory usage</li>
+  <li>not difficult to construct manually</li>
+  <li>use longest match rule</li>
+</ul>
+
+<p>lexer is implemented by:</p>
+
+<ul>
+  <li>conversion to finite-state automata</li>
+  <li>usage of regular expression derivation</li>
+</ul>
+
+<h4 id="example-of-a-simple-lexer">example of a simple lexer:</h4>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span> <span class="k">=</span> <span class="mi">13</span><span class="o">;</span> 
+<span class="nf">while</span> <span class="o">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="nf">println</span><span class="o">(</span><span class="s">"num = "</span><span class="o">,</span> <span class="n">num</span><span class="o">);</span> 
+  <span class="nf">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span> 
+    <span class="n">num</span> <span class="k">=</span> <span class="n">num</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span> 
+  <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> 
+    <span class="n">num</span> <span class="k">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> 
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>tokens:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Ident</span> <span class="o">::=</span>
+	<span class="nf">letter</span> <span class="o">(</span><span class="n">letter</span> <span class="o">|</span> <span class="n">digit</span><span class="o">)*</span>
+<span class="n">integerConst</span> <span class="o">::=</span>
+	<span class="n">digit</span> <span class="n">digit</span><span class="o">*</span>
+<span class="n">keywords</span>
+	<span class="k">if</span>  <span class="k">else</span>  <span class="k">while</span>  <span class="n">println</span>
+<span class="n">special</span> <span class="nf">symbols</span>
+	<span class="o">(</span>  <span class="o">)</span>   <span class="o">&amp;&amp;</span>  <span class="o">&lt;</span>   <span class="o">==</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">*</span>  <span class="o">/</span>  <span class="o">%</span>  <span class="o">!</span>  <span class="o">-</span> <span class="o">{</span>  <span class="o">}</span>  <span class="o">;</span>  <span class="o">,</span>  
+<span class="n">letter</span> <span class="o">::=</span> <span class="n">a</span> <span class="o">|</span> <span class="n">b</span> <span class="o">|</span> <span class="n">c</span> <span class="o">|</span> <span class="err">…</span> <span class="o">|</span> <span class="n">z</span> <span class="o">|</span> <span class="n">A</span> <span class="o">|</span> <span class="n">B</span> <span class="o">|</span> <span class="n">C</span> <span class="o">|</span> <span class="err">…</span> <span class="o">|</span> <span class="n">Z</span>
+<span class="n">digit</span> <span class="o">::=</span> <span class="mi">0</span> <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span> <span class="err">…</span> <span class="o">|</span> <span class="mi">8</span> <span class="o">|</span> <span class="mi">9</span>
+</code></pre></div></div>
+
+<p>a small hand-written lexer:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">enum</span> <span class="nc">Token</span><span class="k">:</span>
+    <span class="kt">case</span> <span class="kt">ID</span><span class="o">(</span><span class="kt">content:</span> <span class="kt">String</span><span class="o">)</span> <span class="c1">// id3</span>
+    <span class="k">case</span> <span class="nc">IntConst</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="c1">// 10</span>
+    <span class="k">case</span> <span class="k">object</span> <span class="nc">AssignEQ</span>
+    <span class="k">case</span> <span class="nc">CompareEQ</span>
+    <span class="k">case</span> <span class="nc">MUL</span> <span class="c1">// *</span>
+    <span class="k">case</span> <span class="nc">PLUS</span> <span class="c1">// +</span>
+    <span class="k">case</span> <span class="nc">LEQ</span> <span class="c1">// &lt;=</span>
+    <span class="k">case</span> <span class="nc">OPAREN</span>
+    <span class="k">case</span> <span class="nc">CPAREN</span>
+    <span class="k">case</span> <span class="nc">IF</span>
+    <span class="k">case</span> <span class="nc">WHILE</span>
+    <span class="k">case</span> <span class="nc">EOF</span> <span class="c1">// End Of File</span>
+
+<span class="k">class</span> <span class="nc">CharStream</span><span class="o">(</span><span class="n">fileName</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span>
+    <span class="kt">val</span> <span class="kt">file</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nc">FileReader</span><span class="o">(</span><span class="n">fileName</span><span class="o">))</span>
+    <span class="k">var</span> <span class="n">current</span><span class="k">:</span> <span class="kt">Char</span> <span class="o">=</span> <span class="o">'\</span><span class="mh">0x0</span><span class="o">'</span>
+    <span class="k">var</span> <span class="n">eof</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="k">def</span> <span class="nf">next</span> <span class="k">=</span>
+    	<span class="nf">if</span> <span class="o">(</span><span class="n">eof</span><span class="o">)</span> 
+			<span class="k">throw</span> <span class="nc">EndOfInput</span><span class="o">(</span><span class="s">"reading"</span> <span class="o">+</span> <span class="n">file</span><span class="o">)</span>
+    	<span class="k">val</span> <span class="nv">c</span> <span class="k">=</span> <span class="nv">file</span><span class="o">.</span><span class="py">read</span><span class="o">()</span>
+    	<span class="n">eof</span> <span class="k">=</span> <span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+    	<span class="n">current</span> <span class="k">=</span> <span class="nv">c</span><span class="o">.</span><span class="py">toChar</span>
+    <span class="n">next</span> <span class="c1">// initialize first char</span>
+
+<span class="k">class</span> <span class="nc">Lexer</span><span class="o">(</span><span class="n">ch</span><span class="k">:</span> <span class="kt">CharStream</span><span class="o">)</span><span class="k">:</span>
+    <span class="kt">var</span> <span class="kt">current:</span> <span class="kt">Token</span>
+    <span class="k">def</span> <span class="nf">next</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
+		<span class="c1">// lexer code goes here</span>
+		<span class="nf">if</span> <span class="o">(</span><span class="n">isLetter</span><span class="o">)</span> <span class="o">{</span>
+  			<span class="n">b</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span>
+            <span class="nf">while</span> <span class="o">(</span><span class="n">isLetter</span> <span class="o">||</span> <span class="n">isDigit</span><span class="o">)</span> <span class="o">{</span>
+                <span class="nv">b</span><span class="o">.</span><span class="py">append</span><span class="o">(</span><span class="nv">ch</span><span class="o">.</span><span class="py">current</span><span class="o">)</span>
+                <span class="nv">ch</span><span class="o">.</span><span class="py">next</span>
+            <span class="o">}</span>
+ 			<span class="nv">keywords</span><span class="o">.</span><span class="py">lookup</span><span class="o">(</span><span class="nv">b</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span> <span class="o">{</span> 
+  				<span class="k">case</span> <span class="nc">None</span><span class="k">=&gt;</span> <span class="n">token</span><span class="k">=</span><span class="nc">ID</span><span class="o">(</span><span class="nv">b</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span>
+  				<span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="n">kw</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">token</span><span class="k">=</span><span class="n">kw</span>
+ 			<span class="o">}</span>
+		<span class="o">}</span>
+		<span class="nf">if</span> <span class="o">(</span><span class="n">isDigit</span><span class="o">)</span> <span class="o">{</span>
+  			<span class="n">k</span> <span class="k">=</span> <span class="mi">0</span>
+  			<span class="nf">while</span> <span class="o">(</span><span class="n">isDigit</span><span class="o">)</span> <span class="o">{</span>
+    			<span class="n">k</span> <span class="k">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="nf">toDigit</span><span class="o">(</span><span class="nv">ch</span><span class="o">.</span><span class="py">current</span><span class="o">)</span>
+    			<span class="nv">ch</span><span class="o">.</span><span class="py">next</span>
+  			<span class="o">}</span>
+  			<span class="n">token</span> <span class="k">=</span> <span class="nc">IntConst</span><span class="o">(</span><span class="n">k</span><span class="o">)</span>
+		<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="deciding-which-token-is-coming">deciding which token is coming</h4>
+
+<p>problem: how do we know we are analyzing a string or integer sequence?</p>
+
+<h5 id="first">first</h5>
+
+<p>use first(e) - symbols with which e can start</p>
+
+<p>$first(L) = \set{a \in A \mid \exist v \in A^*. ~ av\in L }$</p>
+
+<p>example: L = {a, ab}, first(L) = {a}</p>
+
+<p>​	first($\empty$) = $\empty$</p>
+
+<p>​	first($\epsilon$) = $\empty$</p>
+
+<p>​	first(a) = {a}</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​	first(e1</td>
+      <td>e2) = first(e1) $\cup$ first(e2)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>​	first(e^*^) = first(e)</p>
+
+<p>​	first(e1e2) = $\text{if }(nullable(e1))\text{ then }first(e1) \cup first(e2) \text{ else } first(e1)$</p>
+
+<h5 id="nullable">nullable</h5>
+
+<p>​	nullable($\empty$) = false</p>
+
+<p>​	nullable($\epsilon$) = true</p>
+
+<p>​	nullable(a) = false</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​	nullable(e1</td>
+      <td>e2) = nullable(e1) $\or$ nullable(e2)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>​	nullable(e^*^) = true</p>
+
+<p>​	nullable(e1e2) = nullable(e1) $\and$ nullable(e2)</p>
+
+<p><img src="/assets/images/compiler\Snipaste_2021-12-09_23-52-54.png" style="zoom:50%;" /></p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">ch</span><span class="o">.</span><span class="py">current</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="sc">'('</span> <span class="k">=&gt;</span> <span class="o">{</span><span class="n">current</span> <span class="k">=</span> <span class="nc">OPAREN</span><span class="o">;</span> <span class="nv">ch</span><span class="o">.</span><span class="py">next</span><span class="o">;</span> <span class="k">return</span><span class="o">}</span>
+    <span class="k">case</span> <span class="sc">')'</span> <span class="k">=&gt;</span> <span class="o">{</span><span class="n">current</span> <span class="k">=</span> <span class="nc">CPAREN</span><span class="o">;</span> <span class="nv">ch</span><span class="o">.</span><span class="py">next</span><span class="o">;</span> <span class="k">return</span><span class="o">}</span>
+    <span class="k">case</span> <span class="sc">'+'</span> <span class="k">=&gt;</span> <span class="o">{</span><span class="n">current</span> <span class="k">=</span> <span class="nc">PLUS</span><span class="o">;</span> <span class="nv">ch</span><span class="o">.</span><span class="py">next</span><span class="o">;</span> <span class="k">return</span><span class="o">}</span>
+    <span class="k">case</span> <span class="sc">'/'</span> <span class="k">=&gt;</span> <span class="o">{</span><span class="n">current</span> <span class="k">=</span> <span class="nc">DIV</span><span class="o">;</span> <span class="nv">ch</span><span class="o">.</span><span class="py">next</span><span class="o">;</span> <span class="k">return</span><span class="o">}</span>
+    <span class="k">case</span> <span class="sc">'*'</span> <span class="k">=&gt;</span> <span class="o">{</span><span class="n">current</span> <span class="k">=</span> <span class="nc">MUL</span><span class="o">;</span> <span class="nv">ch</span><span class="o">.</span><span class="py">next</span><span class="o">;</span> <span class="k">return</span><span class="o">}</span>
+    <span class="k">case</span> <span class="sc">'='</span> <span class="k">=&gt;</span> <span class="o">{</span> <span class="c1">// more tricky because there can be =, �==</span>
+    	<span class="nv">ch</span><span class="o">.</span><span class="py">next</span>
+    	<span class="nf">if</span> <span class="o">(</span><span class="nv">ch</span><span class="o">.</span><span class="py">current</span> <span class="o">�==</span> <span class="sc">'='</span><span class="o">)</span> <span class="o">{</span><span class="nv">ch</span><span class="o">.</span><span class="py">next</span><span class="o">;</span> <span class="n">current</span> <span class="k">=</span> <span class="nc">CompareEQ</span><span class="o">;</span> <span class="k">return</span><span class="o">}</span>
+    	<span class="k">else</span> <span class="o">{</span><span class="n">current</span> <span class="k">=</span> <span class="nc">AssignEQ</span><span class="o">;</span> <span class="k">return</span><span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">case</span> <span class="sc">'&lt;'</span> <span class="k">=&gt;</span> <span class="o">{</span> <span class="c1">// more tricky because there can be &lt;, &lt;=</span>
+    <span class="nv">ch</span><span class="o">.</span><span class="py">next</span>
+    <span class="nf">if</span> <span class="o">(</span><span class="nv">ch</span><span class="o">.</span><span class="py">current</span> <span class="o">==</span> <span class="sc">'='</span><span class="o">)</span> <span class="o">{</span><span class="nv">ch</span><span class="o">.</span><span class="py">next</span><span class="o">;</span> <span class="n">current</span> <span class="k">=</span> <span class="nc">LEQ</span><span class="o">;</span> <span class="k">return</span><span class="o">}</span>
+    	<span class="k">else</span> <span class="o">{</span><span class="n">current</span> <span class="k">=</span> <span class="nc">LESS</span><span class="o">;</span> <span class="k">return</span><span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h5 id="longest-match-rule">longest match rule</h5>
+
+<p><img src="/assets/images/compiler\Snipaste_2021-12-09_23-56-49.png" alt="" /></p>
+
+<h5 id="token-priority">token priority</h5>
+
+<p>for a word is both identifier and keyword, which should we assign? Set a priority so match the keyword first</p>
+
+<h4 id="general-approach-to-automatic-lexing">general approach to automatic lexing</h4>
+
+<h5 id="traditional-approach">traditional approach</h5>
+
+<ol>
+  <li>convert to nondeterministic finite-state automaton</li>
+  <li>perform determinization (can be expensive)</li>
+  <li>run the resulting automaton on input (linear in the input size)</li>
+</ol>
+
+<h5 id="brzozowskis-derivatives">Brzozowskis derivatives</h5>
+
+<p>accepts: (e, w) -&gt; {true, false}   e: regular expression, w: input word</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">accepts</span><span class="o">(</span><span class="n">e</span><span class="o">,</span> <span class="n">epsilon</span><span class="o">)</span> <span class="k">=</span> <span class="nf">nullable</span><span class="o">(</span><span class="n">e</span><span class="o">)</span>
+
+<span class="nf">accepts</span><span class="o">(</span><span class="n">e</span><span class="o">,</span> <span class="n">cu</span><span class="o">)</span> <span class="k">=</span> 
+	<span class="k">if</span> <span class="n">e</span> <span class="k">=</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">false</span>
+	<span class="k">if</span> <span class="n">e</span> <span class="k">=</span> <span class="n">epsilon</span><span class="o">,</span> <span class="kc">false</span>
+	<span class="k">if</span> <span class="n">e</span> <span class="k">=</span> <span class="n">c</span><span class="o">,</span> <span class="nf">if</span><span class="o">(</span><span class="n">u</span> <span class="k">=</span> <span class="n">epsilon</span><span class="o">)</span> <span class="kc">true</span> <span class="k">else</span> <span class="kc">false</span>
+	<span class="k">if</span> <span class="n">e</span> <span class="k">=</span> <span class="n">d</span><span class="o">,</span> <span class="kc">false</span>
+	<span class="k">if</span> <span class="n">e</span> <span class="k">=</span> <span class="n">e1</span> <span class="o">|</span> <span class="n">e2</span><span class="o">,</span> <span class="nf">accepts</span><span class="o">(</span><span class="n">e1</span><span class="o">,</span> <span class="n">w</span><span class="o">)</span> <span class="o">||</span> <span class="nf">accepts</span><span class="o">(</span><span class="n">e2</span><span class="o">,</span> <span class="n">w</span><span class="o">)</span>
+	<span class="k">if</span> <span class="n">e</span> <span class="k">=</span> <span class="n">e1e2</span><span class="o">,</span> <span class="o">???</span> <span class="c1">// need to try all splits of w?</span>
+	<span class="k">if</span> <span class="n">e</span> <span class="k">=</span> <span class="n">e1</span><span class="o">*,</span> <span class="o">???</span>
+</code></pre></div></div>
+
+<p>after consume a given letter, what is the rest of the regex?</p>
+
+<p>definition:</p>
+
+<p>The derivative of a regex e with respect to letter c, written as $\delta^c(e)$, is defined as:</p>
+
+<p>​				$L(\delta^c(e)) = \set{w \mid cw \in L(e)}$</p>
+
+<p>the derivative of a regex is still a regex</p>
+
+<p>some examples:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$\delta^a(ab</td>
+      <td>ac</td>
+      <td>da)=b</td>
+      <td>c$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>$\delta^a((ab)^<em>)=b(ab)^</em>$</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$\delta^a((ab</td>
+      <td>c)^*ad)=b(ab</td>
+      <td>c)^*ad \mid d$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/images/compiler\Snipaste_2021-12-10_14-46-11.png" style="zoom:80%;" /></p>
+
+<h5 id="matching-regex-by-derivation">matching regex by derivation</h5>
+
+<p>accepts: (e, w) -&gt; {true, false}   e: regular expression, w: input word</p>
+
+<p>accepts(e, epsilon) = nullable(e)</p>
+
+<p>accepts(e, cw) = accepts($\delta^c(e)$, w)</p>
+
+<p>Important: need to cache each intermediate result to avoid duplicate calculation</p>
+
+<h5 id="regular-expression-in-scala">regular expression in Scala</h5>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">enum</span> <span class="nc">RegExp</span><span class="k">:</span>
+    <span class="c1">// empty language∅</span>
+    <span class="k">case</span> <span class="nc">Failure</span>
+    <span class="c1">// empty wordϵ</span>
+    <span class="k">case</span> <span class="nc">EmptyStr</span>
+    <span class="c1">// character a such that predicate(a)</span>
+    <span class="k">case</span> <span class="nc">CharWhere</span><span class="o">(</span><span class="n">predicate</span><span class="k">:</span> <span class="kt">Character</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span><span class="o">)</span>
+    <span class="c1">// union left|right</span>
+    <span class="k">case</span> <span class="nc">Union</span><span class="o">(</span><span class="n">left</span><span class="k">:</span> <span class="kt">RegExp</span><span class="o">,</span> <span class="n">right</span><span class="k">:</span> <span class="kt">RegExp</span><span class="o">)</span>
+    <span class="c1">// concatenation first|second</span>
+    <span class="k">case</span> <span class="nc">Concat</span><span class="o">(</span><span class="n">first</span><span class="k">:</span> <span class="kt">RegExp</span><span class="o">,</span> <span class="n">second</span><span class="k">:</span> <span class="kt">RegExp</span><span class="o">)</span>
+    <span class="c1">// Kleene star underlying∗</span>
+    <span class="k">case</span> <span class="nc">Star</span><span class="o">(</span><span class="n">underlying</span><span class="k">:</span> <span class="kt">RegExp</span><span class="o">)</span>
+
+    <span class="c1">// is this regexp nullable?</span>
+    <span class="k">def</span> <span class="nf">acceptsEmpty</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="o">...</span>
+
+    <span class="c1">// can this regexp possibly accept some words?</span>
+    <span class="k">def</span> <span class="nf">isProductive</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="k">this</span> <span class="k">match</span>
+        <span class="k">case</span> <span class="nc">Failure</span> <span class="k">=&gt;</span> <span class="kc">false</span>
+        <span class="k">case</span> <span class="nc">EmptyStr</span> <span class="o">|</span> <span class="nc">CharWhere</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="o">|</span> <span class="nc">Star</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="kc">true</span> <span class="c1">// approx.</span>
+        <span class="k">case</span> <span class="nc">Union</span><span class="o">(</span><span class="n">l</span><span class="o">,</span> <span class="n">r</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">l</span><span class="o">.</span><span class="py">isProductive</span> <span class="o">||</span> <span class="nv">r</span><span class="o">.</span><span class="py">isProductive</span>
+        <span class="k">case</span> <span class="nc">Concat</span><span class="o">(</span><span class="n">l</span><span class="o">,</span> <span class="n">r</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">l</span><span class="o">.</span><span class="py">isProductive</span> <span class="o">&amp;&amp;</span> <span class="nv">r</span><span class="o">.</span><span class="py">isProductive</span>
+
+<span class="nf">extension</span> <span class="o">(</span><span class="n">expr</span><span class="k">:</span> <span class="kt">RegExpr</span><span class="o">)</span><span class="k">:</span>
+    <span class="kt">def</span> <span class="kt">~</span> <span class="o">(</span><span class="kt">that:</span> <span class="kt">RegExpr</span><span class="o">)</span><span class="kt">:</span> <span class="kt">RegExpr</span> <span class="o">=</span> <span class="nc">Concat</span><span class="o">(</span><span class="n">expr</span><span class="o">,</span> <span class="n">that</span><span class="o">)</span>
+    <span class="k">def</span> <span class="nf">|</span> <span class="o">(</span><span class="n">that</span><span class="k">:</span> <span class="kt">RegExpr</span><span class="o">)</span><span class="k">:</span> <span class="kt">RegExpr</span> <span class="o">=</span> <span class="nc">Union</span><span class="o">(</span><span class="n">expr</span><span class="o">,</span> <span class="n">that</span><span class="o">)</span>
+    <span class="k">def</span> <span class="nf">*</span> <span class="k">:</span> <span class="kt">RegExpr</span> <span class="o">=</span> <span class="nc">Star</span><span class="o">(</span><span class="n">expr</span><span class="o">)</span>
+    <span class="k">def</span> <span class="nf">?</span> <span class="k">:</span> <span class="kt">RegExpr</span> <span class="o">=</span> <span class="n">expr</span> <span class="o">|</span> <span class="nc">EmptyStr</span>
+    <span class="k">def</span> <span class="nf">+</span> <span class="k">:</span> <span class="kt">RegExpr</span> <span class="o">=</span> <span class="n">expr</span> <span class="o">~</span> <span class="n">expr</span><span class="o">.*</span>
+    <span class="k">def</span> <span class="nf">times</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">RegExpr</span> <span class="o">=</span>
+    	<span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="nc">EmptyStr</span> <span class="k">else</span> <span class="n">expr</span> <span class="o">~</span> <span class="nv">expr</span><span class="o">.</span><span class="py">times</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">}</span>
+
+<span class="c1">// example</span>
+<span class="c1">// e1 ~ e2 ~ e3 | e4</span>
+<span class="c1">// e1.* | e2.+</span>
+
+<span class="k">def</span> <span class="nf">elem</span><span class="o">(</span><span class="n">pred</span><span class="k">:</span> <span class="kt">Char</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span><span class="o">)</span><span class="k">:</span> <span class="kt">RegExpr</span> <span class="o">=</span> <span class="nc">CharWhere</span><span class="o">(</span><span class="n">pred</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">elem</span><span class="o">(</span><span class="n">char</span><span class="k">:</span> <span class="kt">Char</span><span class="o">)</span><span class="k">:</span> <span class="kt">RegExpr</span> <span class="o">=</span> <span class="nc">CharWhere</span><span class="o">(</span><span class="k">_</span> <span class="o">==</span> <span class="n">char</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">elem</span><span class="o">(</span><span class="n">chars</span><span class="k">:</span> <span class="kt">Iterable</span><span class="o">[</span><span class="kt">Char</span><span class="o">])</span><span class="k">:</span> <span class="kt">RegExpr</span> <span class="o">=</span>
+	<span class="nv">chars</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">elem</span><span class="o">).</span><span class="py">foldLeft</span><span class="o">[</span><span class="kt">RegExpr</span><span class="o">](</span><span class="nc">Failure</span><span class="o">)(</span><span class="k">_</span> <span class="o">|</span> <span class="k">_</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">word</span><span class="o">(</span><span class="n">chars</span><span class="k">:</span> <span class="kt">Iterable</span><span class="o">[</span><span class="kt">Char</span><span class="o">])</span><span class="k">:</span> <span class="kt">RegExpr</span> <span class="o">=</span>
+	<span class="nv">chars</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">elem</span><span class="o">).</span><span class="py">foldLeft</span><span class="o">[</span><span class="kt">RegExpr</span><span class="o">](</span><span class="nc">EmptyStr</span><span class="o">)(</span><span class="k">_</span> <span class="o">~</span> <span class="k">_</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">inRange</span><span class="o">(</span><span class="n">low</span><span class="k">:</span> <span class="kt">Char</span><span class="o">,</span> <span class="n">high</span><span class="k">:</span> <span class="kt">Char</span><span class="o">)</span><span class="k">:</span> <span class="kt">RegExpr</span> <span class="o">=</span>
+	<span class="nf">elem</span><span class="o">(</span><span class="n">c</span> <span class="k">=&gt;</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="n">low</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="o">)</span>
+
+<span class="c1">// Example:</span>
+<span class="nf">elem</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">isLetter</span><span class="o">)</span> <span class="o">~</span> <span class="o">(</span><span class="nf">elem</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">isLetter</span><span class="o">)</span> <span class="o">|</span> <span class="nf">elem</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">isDigit</span><span class="o">)).*</span>
+
+
+<span class="k">def</span> <span class="nf">derive</span><span class="o">(</span><span class="n">char</span><span class="k">:</span> <span class="kt">Character</span><span class="o">)</span><span class="k">:</span> <span class="kt">RegExp</span> <span class="o">=</span>
+    <span class="k">def</span> <span class="nf">work</span><span class="o">(</span><span class="n">expr</span><span class="k">:</span> <span class="kt">RegExp</span><span class="o">)</span><span class="k">:</span> <span class="kt">RegExp</span> <span class="o">=</span> <span class="n">expr</span> <span class="k">match</span>
+    	<span class="k">case</span> <span class="nc">Failure</span> <span class="o">|</span> <span class="nc">EmptyStr</span> <span class="k">=&gt;</span> <span class="nc">Failure</span>
+    	<span class="k">case</span> <span class="nc">CharWhere</span><span class="o">(</span><span class="n">pred</span><span class="o">)</span> <span class="k">=&gt;</span>
+    		<span class="nf">if</span><span class="o">(</span><span class="nf">pred</span><span class="o">(</span><span class="n">char</span><span class="o">))</span> <span class="nc">EmptyStr</span> <span class="k">else</span> <span class="nc">Failure</span>
+    	<span class="k">case</span> <span class="nc">Union</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nf">work</span><span class="o">(</span><span class="n">left</span><span class="o">)</span> <span class="o">|</span> <span class="nf">work</span><span class="o">(</span><span class="n">right</span><span class="o">)</span>
+    	<span class="k">case</span> <span class="nc">Concat</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">)</span> <span class="k">=&gt;</span>
+    		<span class="k">val</span> <span class="nv">w</span> <span class="k">=</span> <span class="nf">work</span><span class="o">(</span><span class="n">left</span><span class="o">)</span> <span class="o">~</span> <span class="n">right</span>
+    		<span class="nf">if</span><span class="o">(</span><span class="nv">left</span><span class="o">.</span><span class="py">acceptsEmpty</span><span class="o">)</span> <span class="n">w</span> <span class="o">|</span> <span class="nf">work</span><span class="o">(</span><span class="n">right</span><span class="o">)</span> <span class="k">else</span> <span class="n">w</span>
+    	<span class="k">case</span> <span class="nc">Star</span><span class="o">(</span><span class="n">inner</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nf">work</span><span class="o">(</span><span class="n">inner</span><span class="o">)</span> <span class="o">~</span> <span class="n">expr</span>
+    <span class="nf">work</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h5 id="naïve-derivation-is-inefficient">naïve derivation is inefficient</h5>
+
+<p><img src="/assets/images/compiler\Snipaste_2021-12-10_15-03-03.png" alt="" /></p>
+
+<h5 id="solution-on-the-fly-normalization">solution: on-the-fly normalization</h5>
+
+<ul>
+  <li>associate all concatenation to the right: (e1e2)e3 =&gt; e1(e2e3)</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>avoid repetitions in unions: (e1</td>
+          <td>e2)</td>
+          <td>(e2</td>
+          <td>e3) =&gt; e1</td>
+          <td>e2</td>
+          <td>e3</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>after removal,</p>
+
+<p><img src="/assets/images/compiler\Snipaste_2021-12-10_15-13-03.png" style="zoom:50%; float: left" /></p>
+
+<p>code:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">deriveNorm</span><span class="o">(</span><span class="n">char</span><span class="k">:</span> <span class="kt">Character</span><span class="o">)</span><span class="k">:</span> <span class="kt">RegExp</span> <span class="o">=</span>
+	<span class="k">val</span> <span class="nv">disjuncted</span> <span class="k">=</span> <span class="nv">collection</span><span class="o">.</span><span class="py">mutable</span><span class="o">.</span><span class="py">SortedSet</span><span class="o">[</span><span class="kt">RegExp</span><span class="o">]()</span>
+	<span class="k">def</span> <span class="nf">work</span><span class="o">(</span><span class="n">expr</span><span class="k">:</span> <span class="kt">RegExp</span><span class="o">,</span> <span class="n">rest</span><span class="k">:</span> <span class="kt">RegExp</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="n">expr</span> <span class="k">match</span>
+		<span class="k">case</span> <span class="nc">CharWhere</span><span class="o">(</span><span class="n">pred</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nf">if</span><span class="o">(</span><span class="nf">pred</span><span class="o">(</span><span class="n">char</span><span class="o">))</span> <span class="n">disjuncted</span> <span class="o">+=</span> <span class="n">rest</span>
+		<span class="k">case</span> <span class="nc">Union</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nf">work</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">rest</span><span class="o">);</span> <span class="nf">work</span><span class="o">(</span><span class="n">right</span><span class="o">,</span> <span class="n">rest</span><span class="o">)</span>
+		<span class="k">case</span> <span class="nc">Concat</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">)</span> <span class="k">=&gt;</span>
+			<span class="nf">work</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">right</span> <span class="o">~</span> <span class="n">rest</span><span class="o">)</span>
+			<span class="nf">if</span><span class="o">(</span><span class="nv">left</span><span class="o">.</span><span class="py">acceptsEmpty</span><span class="o">)</span> <span class="nf">work</span><span class="o">(</span><span class="n">right</span><span class="o">,</span> <span class="n">rest</span><span class="o">)</span>
+		<span class="k">case</span> <span class="nc">Star</span><span class="o">(</span><span class="n">inner</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nf">work</span><span class="o">(</span><span class="n">inner</span><span class="o">,</span> <span class="n">expr</span> <span class="o">~</span> <span class="n">rest</span><span class="o">)</span>
+		<span class="k">case</span> <span class="nc">Failure</span> <span class="o">|</span> <span class="nc">EmptyStr</span> <span class="k">=&gt;</span> <span class="o">()</span>
+	<span class="nf">work</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="nc">EmptyStr</span><span class="o">)</span> <span class="c1">// register unions into `disjuncted`</span>
+	<span class="nv">disjuncted</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">[</span><span class="kt">RegExp</span><span class="o">](</span><span class="nc">Failure</span><span class="o">)(</span><span class="k">_</span> <span class="o">|</span> <span class="k">_</span><span class="o">)</span> <span class="c1">// rebuild regexp</span>
+</code></pre></div></div>
+
+<h5 id="the-pumping-lemma">the pumping lemma</h5>
+
+<p>regular expression: though infinite, they contain a simple repeating pattern</p>
+
+<p><img src="/assets/images/compiler\Snipaste_2021-12-10_15-10-05.png" style="zoom:80%;" /></p>
+
+<h4 id="theory-of-normalizing-derivation">theory of normalizing derivation</h4>
+
+<p>this part is where I cannot understand.</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_15-22-58.png" alt="" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_15-25-23.png" alt="" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_15-26-17.png" alt="" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_15-27-48.png" alt="" /></p>
+
+<p>Thus, number of distinct regexs generated by normalizing derivation of any w <strong>is bounded</strong>!</p>
+
+<p>more specifically, for any e, we have:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​		$</td>
+      <td>\set{\underline\delta^w(e) \mid w \in A^*}</td>
+      <td>\le 1+2^{</td>
+      <td>max(e, \epsilon)</td>
+      <td>}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>this allows regex matching in constant space and linear time w.r.t. size of words</p>
+
+<h4 id="algorithm-for-regex-matching">algorithm for regex matching</h4>
+
+<ul>
+  <li>start with empty mapping M := $\empty$ and with regex e</li>
+  <li>For each i^th^ character in c~i~ in w
+    <ul>
+      <li>if (e, c~i~) not in domain(M), set M(e, c~i~) := $\underline\delta^{c_i}(e)$</li>
+      <li>set e := M(e, c~i~)</li>
+    </ul>
+  </li>
+  <li>Test whether nullable(e)</li>
+</ul>
+
+<h4 id="expressiveness-limitation-of-regex">expressiveness limitation of regex</h4>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_15-44-58.png" style="zoom:60%;float:left" /></p>
+
+<h2 id="grammars">grammars</h2>
+
+<h3 id="regular-grammar">regular grammar</h3>
+
+<p>an equivalent way of defining regular languages</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​	start -&gt; letter(letter</td>
+      <td>digit)*</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>​	letter -&gt; [a..z]</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​	digit -&gt; 0</td>
+      <td>1</td>
+      <td>…</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>regularity requirement</strong>: no recursion!</p>
+
+<p>definitions form a directed acyclic graph (DAG)</p>
+
+<h3 id="context-free-grammar">context free grammar</h3>
+
+<p>$S \rightarrow \epsilon \mid a~S~b$</p>
+
+<p>semantics given by rewriting derivations</p>
+
+<p>S -&gt; aSb -&gt; aaSbb -&gt; aaaSbbb -&gt; aaa(epsilon)bbb = aaabbb</p>
+
+<h4 id="definition-of-a-context-free-grammars-cfg">definition of a Context-Free Grammars (CFG)</h4>
+
+<p>a tuple G = (A, N, S, R)</p>
+
+<ul>
+  <li>A - terminals (usually tokens, endpoint)</li>
+  <li>N - non-terminals (symbols with recursive definitions)</li>
+  <li>R - grammar rules as pair n -&gt; v, where n is a non-terminal, $v \in (A \cup N)^*$</li>
+  <li>S - starting symbol S</li>
+  <li>G - the derivation starts from S</li>
+</ul>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_15-57-49.png" style="zoom:60%;" /></p>
+
+<h3 id="parse-trees">parse trees</h3>
+
+<h4 id="definition-1">definition</h4>
+
+<p>a tree t is a parse tree of G = (A, N, S, R) iff t is a node-labelled tree with ordered children that satisfies:</p>
+
+<ul>
+  <li>
+    <p>root is labeled by S</p>
+  </li>
+  <li>
+    <p>leaves are labelled by elements of A</p>
+  </li>
+  <li>
+    <p>each non-leaf node is labelled by an element of N</p>
+  </li>
+  <li>
+    <p>for each non-leaf node labelled by n,</p>
+
+    <p>​	whose children left to right are p~1~, … p~k~</p>
+
+    <p>​	there is a rule (n -&gt; p~1~ … p~k~) belongs to R</p>
+  </li>
+  <li>
+    <p>the <em>yield</em> of parse tree t: a word obtained by the leaves of t</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>the <em>language</em> of grammar G: defined as L(G) = {<em>yield</em>(t)</td>
+          <td>t is a parse tree of G}</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h4 id="example">example</h4>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_16-06-12.png" style="zoom:60%;float:left" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_16-06-27.png" style="zoom:60%;float:left" /></p>
+
+<h3 id="syntax-tree">syntax tree</h3>
+
+<p>Difference between parse trees and abstract syntax trees</p>
+
+<p>Node children in parse trees correspond precisely to RHS of grammar rules</p>
+
+<ul>
+  <li>Definition of parse trees is fixed given the grammar. Often, compilers never actually build parse trees in memory</li>
+  <li>uniquely specify how an input was recognized by the grammar</li>
+  <li>contains all information needed to reconstruct the input</li>
+</ul>
+
+<p>Nodes in abstract syntax tree (AST) contain only useful information</p>
+
+<ul>
+  <li>We can choose our own syntax trees, to facilitate both construction and processing in later stages of compiler</li>
+</ul>
+
+<p>Compilers often directly builds ASTs</p>
+
+<h3 id="ambiguous-grammar">ambiguous grammar</h3>
+
+<p>how to parse “x * 42 + y” ?</p>
+
+<p>some token sequences have multiple parse trees =&gt; ambiguous</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_16-12-07.png" style="zoom:60%;" /></p>
+
+<p>solution: change the grammar to layered form</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​		expr -&gt; expr + expr</td>
+      <td>multi</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​		multi -&gt; intLiteral</td>
+      <td>ident</td>
+      <td>multi * multi</td>
+      <td>’(‘ expr ‘)’</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>but how to parse “x + 42 + y” ?</p>
+
+<p>we need to define the associative rule. For ‘+’, we want it to be left-associative, x+42+y = (x+42)+y</p>
+
+<p>solution:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​		expr -&gt; expr + multi</td>
+      <td>multi</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​		multi -&gt; multi * factor</td>
+      <td>factor</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​		factor -&gt; intLiteral</td>
+      <td>indent</td>
+      <td>’(‘ expr ‘)’</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>such a grammar is <strong>left recursive</strong>, since expr -&gt; expr + …</p>
+
+<h3 id="generalities-on-grammar">generalities on grammar</h3>
+
+<p>Chomskys Classification of Grammars</p>
+
+<ul>
+  <li>type 0, unrestricted: arbitrary string rewrite rules
+    <ul>
+      <li>equivalent to Turing machines!</li>
+      <li>eXb -&gt; eXeX -&gt; Y</li>
+    </ul>
+  </li>
+  <li>type 1, context sensitive: RHS always larger
+    <ul>
+      <li>O(n)-space Turing machines</li>
+      <li>aXb -&gt; acXb</li>
+    </ul>
+  </li>
+  <li>type 2, context free: one LHS nonterminal
+    <ul>
+      <li>X -&gt; acXb</li>
+    </ul>
+  </li>
+  <li>type 3, regular: no recursion, just Kleene star
+    <ul>
+      <li>X -&gt; acY*b</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_16-41-23.png" style="zoom:60%;" /></p>
+
+<h2 id="parsing">parsing</h2>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_16-22-47.png" style="zoom:60%;" /></p>
+
+<h3 id="recursive-descent-ll1-parsing">recursive descent LL(1) parsing</h3>
+
+<ul>
+  <li>Can be easily implemented manually based on the grammar</li>
+  <li>Efficient – linear in the size of the token sequence</li>
+  <li>Direct correspondence between grammar and code</li>
+</ul>
+
+<p>a simple example:</p>
+
+<pre><code class="language-pseudocode">statmt ::= 
+    println ( stringConst , ident )
+    | ident = expr
+    | if ( expr ) statmt (else statmt)?
+    | while ( expr ) statmt
+    | { statmt* }
+</code></pre>
+
+<p>a simple parser could be:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">skip</span><span class="o">(</span><span class="n">t</span> <span class="k">:</span> <span class="kt">Token</span><span class="o">)</span> <span class="k">=</span> <span class="nf">if</span> <span class="o">(</span><span class="nv">lexer</span><span class="o">.</span><span class="py">token</span> <span class="o">==</span> <span class="n">t</span><span class="o">)</span> <span class="nv">lexer</span><span class="o">.</span><span class="py">next</span> 
+   <span class="k">else</span> <span class="nf">error</span><span class="o">(</span><span class="err">“</span><span class="nc">Expected</span><span class="err">”</span><span class="o">+</span> <span class="n">t</span><span class="o">)</span>
+
+<span class="k">def</span> <span class="nf">statmt</span> <span class="k">=</span> <span class="o">{</span>
+   <span class="nf">if</span> <span class="o">(</span><span class="nv">lexer</span><span class="o">.</span><span class="py">token</span> <span class="o">==</span> <span class="nc">Println</span><span class="o">)</span> <span class="o">{</span> <span class="nv">lexer</span><span class="o">.</span><span class="py">next</span><span class="o">;</span>
+      <span class="nf">skip</span><span class="o">(</span><span class="n">openParen</span><span class="o">);</span> <span class="nf">skip</span><span class="o">(</span><span class="n">stringConst</span><span class="o">);</span> <span class="nf">skip</span><span class="o">(</span><span class="n">comma</span><span class="o">);</span>
+      <span class="nf">skip</span><span class="o">(</span><span class="n">identifier</span><span class="o">);</span> <span class="nf">skip</span><span class="o">(</span><span class="n">closedParen</span><span class="o">)</span>
+   <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="nv">lexer</span><span class="o">.</span><span class="py">token</span> <span class="o">==</span> <span class="nc">Ident</span><span class="o">)</span> <span class="o">{</span> <span class="nv">lexer</span><span class="o">.</span><span class="py">next</span><span class="o">;</span>
+      <span class="nf">skip</span><span class="o">(</span><span class="n">equality</span><span class="o">);</span> <span class="n">expr</span>
+   <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="nv">lexer</span><span class="o">.</span><span class="py">token</span> <span class="o">==</span> <span class="n">ifKeyword</span><span class="o">)</span> <span class="o">{</span> <span class="nv">lexer</span><span class="o">.</span><span class="py">next</span><span class="o">;</span>
+      <span class="nf">skip</span><span class="o">(</span><span class="n">openParen</span><span class="o">);</span> <span class="n">expr</span><span class="o">;</span> <span class="nf">skip</span><span class="o">(</span><span class="n">closedParen</span><span class="o">);</span> <span class="n">statmt</span><span class="o">;</span>
+      <span class="nf">if</span> <span class="o">(</span><span class="nv">lexer</span><span class="o">.</span><span class="py">token</span> <span class="o">==</span> <span class="n">elseKeyword</span><span class="o">)</span> <span class="o">{</span> <span class="nv">lexer</span><span class="o">.</span><span class="py">next</span><span class="o">;</span> <span class="n">statmt</span> <span class="o">}</span>
+   <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="nv">lexer</span><span class="o">.</span><span class="py">token</span> <span class="o">==</span> <span class="n">whileKeyword</span><span class="o">)</span> <span class="o">{</span> <span class="nv">lexer</span><span class="o">.</span><span class="py">next</span><span class="o">;</span>
+      <span class="nf">skip</span><span class="o">(</span><span class="n">openParen</span><span class="o">);</span> <span class="n">expr</span><span class="o">;</span> <span class="nf">skip</span><span class="o">(</span><span class="n">closedParen</span><span class="o">);</span> <span class="n">statmt</span>
+   <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="nv">lexer</span><span class="o">.</span><span class="py">token</span> <span class="o">==</span> <span class="n">openBrace</span><span class="o">)</span> <span class="o">{</span> <span class="nv">lexer</span><span class="o">.</span><span class="py">next</span><span class="o">;</span>
+      <span class="nf">while</span> <span class="o">(</span><span class="n">isFirstOfStatmt</span><span class="o">)</span> <span class="o">{</span> <span class="n">statmt</span> <span class="o">}</span>
+      <span class="nf">skip</span><span class="o">(</span><span class="n">closedBrace</span><span class="o">)</span>
+ <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="nf">error</span><span class="o">(</span><span class="err">“</span><span class="nc">Unknown</span> <span class="n">statement</span><span class="o">,</span> <span class="n">found</span> <span class="n">token</span> <span class="err">”</span> <span class="o">+</span> <span class="nv">lexer</span><span class="o">.</span><span class="py">token</span><span class="o">)</span>  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>because we have terminals at the beginning of each alternative, which rule to parse is quite easy to get.</p>
+
+<p>now look at another example:</p>
+
+<pre><code class="language-pseudocode">%% the priority is similar to java
+expr ::= expr ( +|-|*|/ ) expr
+		| name
+		| '(' expr ')'
+name ::= ident
+</code></pre>
+
+<p>we can transform it to the abstract syntax tree:</p>
+
+<pre><code class="language-pseudocode">expr ::= term termList
+termList ::= + term termList
+			| - term termList
+			| epsilon
+term ::= factor factorList
+factorList ::= * factor factorList
+			| / factor factorList
+            | epsilon
+factor ::= name | ( expr )
+name ::= ident
+</code></pre>
+
+<p>corresponding code:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">expr</span> <span class="k">=</span> <span class="o">{</span> <span class="n">term</span><span class="o">;</span> <span class="n">termList</span> <span class="o">}</span>
+<span class="k">def</span> <span class="nf">termList</span> <span class="k">=</span>
+  <span class="nf">if</span> <span class="o">(</span><span class="n">token</span><span class="o">==</span><span class="nc">PLUS</span><span class="o">)</span> <span class="o">{</span>
+     <span class="nf">skip</span><span class="o">(</span><span class="nc">PLUS</span><span class="o">);</span> <span class="n">term</span><span class="o">;</span> <span class="n">termList</span>
+  <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">token</span><span class="o">==</span><span class="nc">MINUS</span><span class="o">)</span>
+     <span class="nf">skip</span><span class="o">(</span><span class="nc">MINUS</span><span class="o">);</span> <span class="n">term</span><span class="o">;</span> <span class="n">termList</span>
+  <span class="o">}</span>
+<span class="k">def</span> <span class="nf">term</span> <span class="k">=</span> <span class="o">{</span> <span class="n">factor</span><span class="o">;</span> <span class="n">factorList</span> <span class="o">}</span>
+<span class="o">...</span>
+<span class="k">def</span> <span class="nf">factor</span> <span class="k">=</span>
+  <span class="nf">if</span> <span class="o">(</span><span class="n">token</span><span class="o">==</span><span class="nc">IDENT</span><span class="o">)</span> <span class="n">name</span>
+  <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">token</span><span class="o">==</span><span class="nc">OPAR</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nf">skip</span><span class="o">(</span><span class="nc">OPAR</span><span class="o">);</span> <span class="n">expr</span><span class="o">;</span> <span class="nf">skip</span><span class="o">(</span><span class="nc">CPAR</span><span class="o">)</span>
+  <span class="o">}</span> <span class="k">else</span> <span class="nf">error</span><span class="o">(</span><span class="s">"expected ident or )"</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>we need to rewrite the AST so that:</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_19-07-32.png" style="zoom:60%;" /></p>
+
+<h4 id="algorithm-for-first-and-null">algorithm for <em>first</em> and <em>null</em></h4>
+
+<p>$first(A) = first(B_1…B_p) \cup first(C_1…C_p) \cup first(D_1…D_p)$</p>
+
+<p>$first(B_1…B_p) = \left{ 
+  \begin{array}{ c l }
+    first(B_1) &amp;  \text{if not } nullable(B_1) <br />
+    first(B_1) \cup …\cup first(B_k) &amp;  \text{if } nullable(B_1),…, nullable(B_{k-1}) \text{ and not } nullable(B_k)
+  \end{array}
+\right.$</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_19-18-31.png" style="zoom:67%;" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_19-21-15.png" style="zoom: 67%;" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_19-23-18.png" style="zoom:67%;" /></p>
+
+<p>thus, given any grammar, we can:</p>
+
+<ul>
+  <li>for each non-terminal X, whether nullable(X)</li>
+  <li>using this, get the set of first(X) for each non-terminal</li>
+</ul>
+
+<p>pseudo code for getting the constraints:</p>
+
+<pre><code class="language-pseudocode">nullable = {}
+changed = true
+while (changed) {
+  changed = false
+  for each non-terminal X
+    if (X is not nullable) and (grammar contains rule X ::= ε | ...     ) 
+    	or (grammar contains rule     X ::= Y1 ... Yn | ... where {Y1,...,Yn} in nullable)
+    then {
+        nullable = nullable U {X}
+        changed = true
+    }
+}
+
+for each nonterminal X: first(X) = {}
+for each terminal t:  first(t) = {t}
+loop
+  for each grammar rule X ::= Y(1) ... Y(k)
+  for i = 1 to k
+      if i=1 or {Y(1),...,Y(i-1)}  in nullable 
+      then
+        first(X) = first(X) U first(Y(i))
+until none of first(…) changed in last itera#on
+</code></pre>
+
+<h4 id="problem-with-nullable-non-terminal">problem with nullable non-terminal</h4>
+
+<p>there are still some cases cannot be determined only using first set:</p>
+
+<pre><code class="language-pseudocode">stmtList ::= ε | stmt  stmtList 
+stmt ::= assign | block 
+assign ::= ID  =  ID
+block ::= beginof ID stmtList ID ends
+
+def stmtList = 
+  if (???) 			// what should the condition be?
+  else { stmt; stmtList }
+def stmt =
+  if (lex.token == ID) assign
+  else if (lex.token == beginof) block
+  else error(“Syntax error: expected ID or beginonf”)
+…
+def block =
+  { skip(beginof); skip(ID); stmtList; skip(ID); skip(ends) }
+</code></pre>
+
+<p>we cannot determine if stmtList is null or continue parsing:</p>
+
+<p>For nullable non-terminals, we must also compute what <strong><em>follows</em></strong> them</p>
+
+<p>parsing the block, beginof ID stmtList ID ends, after we consume beginof, ID, next we see is also an ID, what is this ID for? a new assignment? or the ID end? In LL(1) grammar, by just looking at next token, this is not determined!</p>
+
+<h4 id="ll1-grammar">LL(1) grammar</h4>
+
+<ul>
+  <li>Grammar is LL(1) if for each nonterminal X
+    <ul>
+      <li>first sets of different alternatives of X are dijoint</li>
+      <li>if nullable(X), first(X) must be disjoint from follow(X) and only one alternative of X maybe nullable</li>
+    </ul>
+  </li>
+  <li>For each LL(1) grammar we can build recursive-descent parser</li>
+  <li>Each LL(1) grammar is unambiguous</li>
+  <li>If a grammar is not LL(1), we can sometimes transform it into equivalent LL(1) grammar</li>
+</ul>
+
+<p>So for the above stmtList example, it is not LL(1) because:</p>
+
+<ul>
+  <li>nullable(stmtList)</li>
+  <li>first(stmtList) = {ID, beginof}</li>
+  <li>follow(stmtList) = {ID}</li>
+  <li>$first(stmt) \cap follow(stmtList) = {ID}$</li>
+</ul>
+
+<h4 id="algorithm-for-follow">algorithm for <em>follow</em></h4>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_19-56-37.png" style="zoom:67%;" /></p>
+
+<h4 id="ll1-parse-table">LL(1) parse table</h4>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_20-00-50.png" style="zoom:67%;" /></p>
+
+<h3 id="concrete-parser-implementation">concrete parser implementation</h3>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">enum</span> <span class="nc">Token</span><span class="k">:</span>
+    <span class="kt">case</span> <span class="kt">Ident</span><span class="o">(</span><span class="kt">name:</span> <span class="kt">String</span><span class="o">)</span>
+    <span class="kt">case</span> <span class="kt">OpenParen</span>
+    <span class="k">case</span> <span class="nc">CloseParen</span>
+    <span class="k">case</span> <span class="nc">Plus</span>
+    <span class="k">case</span> <span class="nc">Times</span>
+<span class="c1">// "A + B * C" =&gt; Ident("A"),Plus,Ident("B"),Times,Ident("C")</span>
+
+<span class="n">enum</span> <span class="nc">Expr</span><span class="k">:</span>
+    <span class="kt">case</span> <span class="kt">Var</span><span class="o">(</span><span class="kt">name:</span> <span class="kt">String</span><span class="o">)</span>
+    <span class="kt">case</span> <span class="kt">Add</span><span class="o">(</span><span class="kt">lhs:</span> <span class="kt">Expr</span><span class="o">,</span> <span class="kt">rhs:</span> <span class="kt">Expr</span><span class="o">)</span>
+    <span class="k">case</span> <span class="nc">Mult</span><span class="o">(</span><span class="n">lhs</span><span class="k">:</span> <span class="kt">Expr</span><span class="o">,</span> <span class="n">rhs</span><span class="k">:</span> <span class="kt">Expr</span><span class="o">)</span>
+<span class="c1">// "A + B * C" =&gt; Add( Var("A") , Mult(Var("B"), Var("C")) )</span>
+
+<span class="k">class</span> <span class="nc">Parser</span><span class="o">(</span><span class="n">ite</span><span class="k">:</span> <span class="kt">Iterator</span><span class="o">[</span><span class="kt">Token</span><span class="o">])</span><span class="k">:</span>
+	<span class="c1">// Parser state manipulation:</span>
+	<span class="k">var</span> <span class="n">cur</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Token</span><span class="o">]</span> <span class="k">=</span> <span class="nv">ite</span><span class="o">.</span><span class="py">nextOption</span>
+	<span class="k">def</span> <span class="nf">consume</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
+		<span class="n">cur</span> <span class="k">=</span> <span class="nv">ite</span><span class="o">.</span><span class="py">nextOption</span>
+	<span class="c1">// define parser here:</span>
+	<span class="k">def</span> <span class="nf">expr</span> <span class="k">=</span> <span class="o">...</span>
+
+<span class="k">object</span> <span class="nc">Parser</span><span class="k">:</span>
+	<span class="kt">def</span> <span class="kt">parse</span><span class="o">(</span><span class="kt">ts:</span> <span class="kt">Iterable</span><span class="o">[</span><span class="kt">Token</span><span class="o">])</span><span class="k">:</span> <span class="kt">Expr</span> <span class="o">=</span>
+		<span class="k">val</span> <span class="nv">p</span> <span class="k">=</span> <span class="nc">Parser</span><span class="o">(</span><span class="nv">ts</span><span class="o">.</span><span class="py">iterator</span><span class="o">)</span>
+		<span class="k">val</span> <span class="nv">res</span> <span class="k">=</span> <span class="nv">p</span><span class="o">.</span><span class="py">expr</span> <span class="c1">// entry point</span>
+		<span class="nf">if</span> <span class="o">(</span><span class="nv">p</span><span class="o">.</span><span class="py">cur</span><span class="o">.</span><span class="py">nonEmpty</span><span class="o">)</span>
+			<span class="nf">fail</span><span class="o">(</span><span class="s">"input not fully consumed"</span><span class="o">)</span>
+		<span class="n">res</span>
+
+<span class="c1">// Helper method:</span>
+<span class="k">def</span> <span class="nf">skip</span><span class="o">(</span><span class="n">tk</span><span class="k">:</span> <span class="kt">Token</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
+	<span class="nf">if</span> <span class="o">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="nc">Some</span><span class="o">(</span><span class="n">tk</span><span class="o">))</span>
+		<span class="nf">fail</span><span class="o">(</span><span class="s">"expected "</span> <span class="o">+</span> <span class="n">tk</span> <span class="o">+</span> <span class="s">", found "</span> <span class="o">+</span> <span class="n">cur</span><span class="o">)</span>
+	<span class="n">consume</span>
+
+<span class="c1">// Unambiguous "atomic" expressions:</span>
+<span class="k">def</span> <span class="nf">atom</span><span class="k">:</span> <span class="kt">Expr</span> <span class="o">=</span> 
+	<span class="n">cur</span> <span class="k">match</span>
+		<span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Ident</span><span class="o">(</span><span class="n">nme</span><span class="o">))</span> <span class="k">=&gt;</span> 
+			<span class="n">consume</span>
+			<span class="nc">Var</span><span class="o">(</span><span class="n">nme</span><span class="o">)</span>
+		<span class="k">case</span> <span class="nc">OpenParen</span> <span class="k">=&gt;</span>
+			<span class="n">consume</span>
+			<span class="k">val</span> <span class="nv">e</span> <span class="k">=</span> <span class="n">expr</span>
+			<span class="nf">skip</span><span class="o">(</span><span class="nc">CloseParen</span><span class="o">)</span>
+			<span class="n">e</span>
+		<span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="nf">fail</span><span class="o">(</span><span class="s">"expected atomic expression, found "</span> <span class="o">+</span> <span class="n">cur</span><span class="o">)</span>
+
+<span class="k">def</span> <span class="nf">expr</span><span class="k">:</span> <span class="kt">Expr</span> <span class="o">=</span>
+	<span class="k">val</span> <span class="nv">p</span> <span class="k">=</span> <span class="n">product</span>
+	<span class="k">val</span> <span class="nv">ps</span> <span class="k">=</span> <span class="n">addedProducts</span>
+	<span class="nv">ps</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="n">p</span><span class="o">)((</span><span class="n">l</span><span class="o">,</span> <span class="n">r</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Add</span><span class="o">(</span><span class="n">l</span><span class="o">,</span> <span class="n">r</span><span class="o">))</span>
+
+<span class="k">def</span> <span class="nf">addedProducts</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Expr</span><span class="o">]</span> <span class="k">=</span> <span class="o">\</span>
+	<span class="n">cur</span> <span class="k">match</span>
+		<span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Plus</span><span class="o">)</span> <span class="k">=&gt;</span>
+			<span class="n">consume</span>
+			<span class="n">product</span> <span class="o">::</span> <span class="n">addedProducts</span>
+		<span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="nc">Nil</span>
+
+<span class="k">def</span> <span class="nf">product</span><span class="k">:</span> <span class="kt">Expr</span> <span class="o">=</span>
+	<span class="k">val</span> <span class="nv">a</span> <span class="k">=</span> <span class="n">atom</span>
+	<span class="k">val</span> <span class="nv">as</span> <span class="k">=</span> <span class="n">multipliedAtoms</span>
+	<span class="nv">as</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="n">a</span><span class="o">)((</span><span class="n">l</span><span class="o">,</span> <span class="n">r</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Mult</span><span class="o">(</span><span class="n">l</span><span class="o">,</span> <span class="n">r</span><span class="o">))</span>
+
+<span class="k">def</span> <span class="nf">multipliedAtoms</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Expr</span><span class="o">]</span> <span class="k">=</span> <span class="n">cur</span> <span class="k">match</span>
+	<span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Times</span><span class="o">)</span> <span class="k">=&gt;</span>
+		<span class="n">consume</span>
+		<span class="n">product</span> <span class="o">::</span> <span class="n">addedProducts</span>
+	<span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="nc">Nil</span>
+</code></pre></div></div>
+
+<h3 id="pratt-parsing">Pratt Parsing</h3>
+
+<p>how to avoid manually transforming grammars?</p>
+
+<p>how to support user-defined operators and parse them correctly?</p>
+
+<p>===&gt; We need separately specify operator precedence / associativity</p>
+
+<h4 id="idea">idea</h4>
+
+<p>Simplest way of describing precedence and associativity:</p>
+
+<p>​	operators have distinct left and right precedences</p>
+
+<p>​	‘+’ has (3,4) and ‘*’ has (5,6)</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_20-23-59.png" style="zoom:50%;" /></p>
+
+<h4 id="implementation">implementation</h4>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">opPrec</span><span class="o">(</span><span class="n">opStr</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">opStr</span> <span class="k">match</span>
+    <span class="k">case</span> <span class="s">"*"</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="mi">50</span><span class="o">,</span> <span class="mi">51</span><span class="o">)</span>
+    <span class="k">case</span> <span class="s">"+"</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">)</span>
+    <span class="k">case</span> <span class="s">"=&gt;"</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="mi">21</span><span class="o">,</span> <span class="mi">20</span><span class="o">)</span>
+    <span class="k">case</span> <span class="o">...</span>
+
+<span class="n">enum</span> <span class="nc">Token</span><span class="k">:</span>
+	<span class="kt">case</span> <span class="kt">OpenParen</span>
+	<span class="k">case</span> <span class="nc">CloseParen</span>
+	<span class="k">case</span> <span class="nc">Ident</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+	<span class="k">case</span> <span class="nc">Oper</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+
+<span class="n">enum</span> <span class="nc">Expr</span><span class="k">:</span>
+	<span class="kt">case</span> <span class="kt">Var</span><span class="o">(</span><span class="kt">name:</span> <span class="kt">String</span><span class="o">)</span>
+	<span class="kt">case</span> <span class="kt">Infix</span><span class="o">(</span><span class="kt">lhs:</span> <span class="kt">Expr</span><span class="o">,</span> <span class="kt">op:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">rhs</span><span class="k">:</span> <span class="kt">Expr</span><span class="o">)</span>
+
+<span class="k">def</span> <span class="nf">expr</span><span class="o">(</span><span class="n">prec</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Expr</span> <span class="o">=</span> 
+	<span class="n">cur</span> <span class="k">match</span>
+		<span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Ident</span><span class="o">(</span><span class="n">nme</span><span class="o">))</span> <span class="k">=&gt;</span>
+			<span class="n">consume</span><span class="o">;</span> <span class="nf">exprCont</span><span class="o">(</span><span class="nc">Var</span><span class="o">(</span><span class="n">nme</span><span class="o">),</span> <span class="n">prec</span><span class="o">)</span>
+		<span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">OpenParen</span><span class="o">)</span> <span class="k">=&gt;</span>
+			<span class="n">consume</span><span class="o">;</span> <span class="k">val</span> <span class="nv">res</span> <span class="k">=</span> <span class="nf">expr</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="nf">skip</span><span class="o">(</span><span class="nc">CloseParen</span><span class="o">)</span>
+			<span class="nf">exprCont</span><span class="o">(</span><span class="n">res</span><span class="o">,</span> <span class="n">prec</span><span class="o">)</span>
+		<span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="nf">fail</span><span class="o">(</span><span class="n">rest</span><span class="o">)</span>
+
+<span class="c1">// Having parsed acc, what to do next at this precedence?</span>
+<span class="k">def</span> <span class="nf">exprCont</span><span class="o">(</span><span class="n">acc</span><span class="k">:</span> <span class="kt">Expr</span><span class="o">,</span> <span class="n">prec</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Expr</span> <span class="o">=</span> <span class="n">cur</span> <span class="k">match</span>
+	<span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Oper</span><span class="o">(</span><span class="n">opStr</span><span class="o">))</span> <span class="k">if</span> <span class="nf">opPrec</span><span class="o">(</span><span class="n">opStr</span><span class="o">).</span><span class="py">_1</span> <span class="o">&gt;</span> <span class="n">prec</span> <span class="k">=&gt;</span>
+		<span class="n">consume</span>
+		<span class="k">val</span> <span class="nv">rhs</span> <span class="k">=</span> <span class="nf">expr</span><span class="o">(</span><span class="nf">opPrec</span><span class="o">(</span><span class="n">opStr</span><span class="o">).</span><span class="py">_2</span><span class="o">)</span>
+		<span class="nf">exprCont</span><span class="o">(</span><span class="nc">Infix</span><span class="o">(</span><span class="n">acc</span><span class="o">,</span> <span class="n">opStr</span><span class="o">,</span> <span class="n">rhs</span><span class="o">),</span> <span class="n">prec</span><span class="o">)</span>
+	<span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="n">acc</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_20-36-33.png" style="zoom:50%;" /></p>
+
+<h4 id="user-defined-operators">user defined operators</h4>
+
+<h4 id="character-precedence-tables">character precedence tables</h4>
+
+<h3 id="parsing-expression-grammars-peg">parsing-expression grammars (PEG)</h3>
+
+<p>more recent alternative to context-free grammars (CFG)
+Parsing-Expression Grammars remove ambiguities through biased choice:
+	Instead of X|Y, use X/Y
+which tries to parse Y only if parsing X fails!</p>
+
+<h2 id="name-analysis">name analysis</h2>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_20-47-07.png" style="zoom:67%;" /></p>
+
+<ul>
+  <li>An identifier is used but not declared:
+def p(amount: Int) { total = total + ammount }</li>
+  <li>Multiple method arguments have the same name
+def p(x:Int, y:Int, x:Int) { FF. }</li>
+  <li>Multiple functions with the same name
+object Program {
+	def m(x: Int) = { x + 1 }
+	def m(x: Int) = { x + 3 } }</li>
+  <li>ill-formed type definition (e.g. circular)
+class List extends Expr
+class Cons extends List
+class Expr extends Cons</li>
+</ul>
+
+<h3 id="symbol-table">symbol table</h3>
+
+<p>maintain a map from identifiers to declaration information (symbol) at each point in the tree: <strong>symbol table</strong></p>
+
+<p>symbol tables can be computed every time, cached, or integrated partly or fully into trees as symbol reference</p>
+
+<p>it provides efficient access to information of identifiers</p>
+
+<ul>
+  <li>declaration of a value or variable, its type and initial value</li>
+  <li>variable inside a pattern matching</li>
+  <li>a function and its signatures and its body</li>
+  <li>an algebraic data type (case class) its alternatives and fields</li>
+</ul>
+
+<p>it is a map data structure</p>
+
+<h3 id="scope-and-scoping-rules">scope and scoping rules</h3>
+
+<h4 id="static-lexical-scoping">static (lexical) scoping</h4>
+
+<p>local variables are only visible inside the function or block where they are introduced</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_22-33-49.png" alt="" /></p>
+
+<h2 id="type-system">type system</h2>
+
+<p>why type? prevent errors, ensure memory safety, document the program, refactor, compilation optimization</p>
+
+<p>An unsound (broken) type system</p>
+
+<h3 id="background-inductively-defined-relations-and-sets">background: inductively defined relations and sets</h3>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_22-49-13.png" style="zoom:60%;" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>proof that r = {(x, y)</td>
+      <td>x &lt;= y}:</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>if there is a derivation, then x&lt;=y</p>
+
+    <ul>
+      <li>induction on derivation, go through each rule</li>
+    </ul>
+  </li>
+  <li>
+    <p>if x&lt;=y, there exists a derivation</p>
+
+    <ul>
+      <li>
+        <p>given x, y find derivation tree</p>
+
+        <p>start from (0, 0) then derive (0, y-x) in y-x steps of increase right</p>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>if x &gt; 0, increase both, x &lt; 0, decrease both</td>
+              <td>x</td>
+              <td>times</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-10_22-50-12.png" style="zoom:60%;" /></p>
+
+<h3 id="context-free-grammar-as-inductively-defined-relations">context-free grammar as inductively defined relations</h3>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_14-27-28.png" style="zoom:60%; float: left" /></p>
+
+<p>We define a rule as r of the form
+\(\frac{t_1(\bar x) \in r, ... , t_n(\bar x) \in r}{t(\bar x) \in r}\)
+where t~i~(x) in r is the assumptions, and t(x) in r is the conclusion</p>
+
+<p>when n=0 (no assumptions), the rule is called an axiom</p>
+
+<h4 id="example-amyli-language">example: Amyli language</h4>
+
+<p>Amyli is a tiny language only works on integers and booleans</p>
+
+<p>(initial) program is a pair (e~top~, t~top~) where</p>
+
+<ul>
+  <li>e~top~ is the top-level environment, function names -&gt; function definition</li>
+  <li>t~top~ is the top-level term (expression) that starts execution</li>
+</ul>
+
+<p>Function definition for a given function name is a tuple of:</p>
+
+<ul>
+  <li>parameter list $\bar x$</li>
+  <li>parameter type $\bar \tau$</li>
+  <li>expression representing function body t</li>
+  <li>result type $\tau_0$</li>
+</ul>
+
+<p>expressions are formed by primitive functions (+, -, *, /), defined function calls or if expression</p>
+
+<p>no local val definition nor match, e will remain fixed</p>
+
+<p>thus, we can write t as:
+\(t := true \mid false \mid c \mid f(t_1, t_2, ..., t_n) \mid if (t) ~t_1 ~else ~t_2
+\\ \text{c is an interger, f denotes user-defined function or primitive operators}\)
+so we can write a simple factor function program as:</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_14-45-18.png" style="zoom: 50%;" /></p>
+
+<h4 id="operational-semantics">operational semantics</h4>
+
+<p>so how can we process a program to infer its type? We need to define a set of rules so that we can define the relations inductively:</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_14-51-31.png" style="zoom:50%;" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_14-51-42.png" style="zoom: 50%;" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_14-51-51.png" style="zoom: 50%;" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_14-52-29.png" style="zoom: 50%;" /></p>
+
+<p>having these rules, we can do the induction:</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_15-05-24.png" style="zoom:50%;" /></p>
+
+<p>now consider another example, when we encounter a expression: if (5) 3 else 7</p>
+
+<p>5 cannot further evaluate and it is a integer constant, but if statement only accepts true, false, thus it get <strong>stuck</strong></p>
+
+<p><strong>stuck</strong> terms indicate errors</p>
+
+<p><strong>Type checking</strong> is a way to prevent stuck terms <strong>statically</strong>, without trying to evaluate the program to see if it gets stuck</p>
+
+<h4 id="typing-rules">typing rules</h4>
+
+<p>typing context: given inital program (e, t) defined
+\(\Gamma_0 = \set{(f, \tau_1 \times...\times\tau_n\to \tau_0)\mid (f, xs, (\tau_1,...,\tau_n), t_f, \tau_0)\in e}\)
+<img src="/assets/images/compiler/Snipaste_2021-12-12_15-16-02.png" style="zoom:60%;float:left" /></p>
+
+<p>now we can set the type rules for the Amyli language:</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_15-21-23.png" style="zoom:50%;float:left" /></p>
+
+<h4 id="soundness-theorem">soundness theorem</h4>
+
+<p>if program type checks, its evaluation does not get stuck</p>
+
+<p>proof using two lemmas (common approach):</p>
+
+<ul>
+  <li>
+    <p>progress</p>
+
+    <p>if a program type checks, it is not stuck.</p>
+
+    <p>if $\Gamma \vdash t:\tau$, then either t is a constant or there exists a t’ that $t  \rightsquigarrow t’$</p>
+  </li>
+  <li>
+    <p>preservation</p>
+
+    <p>if a program type checks and makes one “$ \rightsquigarrow$” step, then the result again type checks.</p>
+
+    <p>e.g. if $\Gamma \vdash t:\tau$ and $t\rightsquigarrow t’$ then $\Gamma \vdash t’:\tau$</p>
+  </li>
+</ul>
+
+<p>example: how to show that if is progress and preservation</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_15-32-55.png" style="zoom: 50%;" /></p>
+
+<p>don’t ask me why, I cannot understand this fucking tedious proof</p>
+
+<p>an example of derivation tree:</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_15-37-38.png" style="zoom:50%;" /></p>
+
+<h2 id="type-inference">type inference</h2>
+
+<p>motivation:</p>
+
+<p>writing type annotations is boring, need a way to get the type automatically</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_15-41-57.png" style="zoom:50%;" /></p>
+
+<p>then how to do a type inference? think about one small example:</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_15-44-14.png" style="zoom:50%;" /></p>
+
+<h3 id="strategy-for-type-inference">strategy for type inference</h3>
+
+<ol>
+  <li>use type variable (e.g. $\alpha_{verbose}, \alpha_{s}$) to denote unknown types</li>
+  <li>use type checking rules to derive constraints among type variables (e.g., arguments have expected types)</li>
+  <li>use a unification algorithm to solve the constraints</li>
+</ol>
+
+<h3 id="demo-using-a-simple-language">demo using a simple language</h3>
+
+<h4 id="types">types</h4>
+
+<ol>
+  <li>primitive types: Int, Bool, String, Unit</li>
+  <li>type constructors: Pair[A, B] or (A, B), Function[A,B] or A=&gt;B</li>
+</ol>
+
+<p>Abstract syntax of types:
+\(T ::= Int \mid Bool \mid String \mid Unit \mid (T_1, T_2) \mid (T_1, \Rightarrow T_2)\)
+Terms include pairs and anonymous functions: (x denotes variables, c literals)
+\(t ::= x \mid c \mid f(t_1,...,t_n) \mid if (t) ~ t_1 ~ else ~ t_2 \mid (t1,t2) \mid (x \Rightarrow t)\)
+if t= (x,y) then t._1=x and t._2=y</p>
+
+<h4 id="type-rules">type rules</h4>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_16-05-53.png" style="zoom: 50%; float: left;" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_16-06-03.png" style="zoom:50%;float:left" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_16-06-16.png" style="zoom:50%;float:left" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_16-07-20.png" style="zoom:50%;float:left" /></p>
+
+<p>now let’s see an example:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">translatorFactory</span><span class="o">(</span><span class="n">dx</span><span class="o">,</span> <span class="n">dy</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+	<span class="n">p</span><span class="o">⇒(</span><span class="nv">p</span><span class="o">.</span><span class="py">_1</span> <span class="o">+</span> <span class="n">dx</span><span class="o">,</span> <span class="nv">p</span><span class="o">.</span><span class="py">_2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">)</span><span class="c1">// returns anonymous function</span>
+<span class="o">}</span>
+<span class="k">def</span> <span class="nf">upTranslator</span> <span class="k">=</span> <span class="nf">translatorFactory</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">100</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">test</span> <span class="k">=</span> <span class="nf">upTranslator</span><span class="o">((</span><span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">))</span> <span class="c1">// computes (3, 105)</span>
+
+<span class="c1">// the actual type should be:</span>
+<span class="k">def</span> <span class="nf">translatorFactory</span><span class="o">(</span><span class="n">dx</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">dy</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span><span class="kt">Int</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="nc">Int</span><span class="o">,</span><span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+	<span class="n">p</span><span class="o">⇒(</span><span class="nv">p</span><span class="o">.</span><span class="py">_1</span> <span class="o">+</span> <span class="n">dx</span><span class="o">,</span> <span class="nv">p</span><span class="o">.</span><span class="py">_2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">)</span>
+<span class="o">}</span>
+<span class="k">def</span> <span class="nf">upTranslator</span> <span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span><span class="kt">Int</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="nc">Int</span><span class="o">,</span><span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="nf">translatorFactory</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">100</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">test</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span><span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="nf">upTranslator</span><span class="o">((</span><span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">))</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_16-21-16.png" style="zoom:67%;" /></p>
+
+<p>So, when we don’t have the type, how can we inference the type, say dx?</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">translatorFactory</span><span class="o">(</span><span class="n">dx</span><span class="o">,</span> <span class="n">dy</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span> <span class="n">p</span><span class="o">⇒(</span><span class="nv">p</span><span class="o">.</span><span class="py">_1</span> <span class="o">+</span> <span class="n">dx</span><span class="o">,</span> <span class="nv">p</span><span class="o">.</span><span class="py">_2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">)</span> <span class="o">}</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_16-35-16.png" style="zoom: 50%;" /></p>
+
+<p>so, we can generate constraints from the expressions given:</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_16-37-30.png" style="zoom:67%;" /></p>
+
+<p>then, we need a unification algorithm to solve the constraints:</p>
+
+<ul>
+  <li>
+    <p>Apply following rules as long as current set of equations changes:</p>
+
+    <ul>
+      <li>
+        <p>Orient: Replace T=αwithα=T when T not a type variable</p>
+      </li>
+      <li>
+        <p>Delete useless: Remove T=T (both sides syntactically equal)</p>
+      </li>
+      <li>
+        <p>Eliminate: Givenα=T whereαdoes not occur in T,</p>
+      </li>
+      <li>
+        <p>replaceαwith T in all remaining equations</p>
+      </li>
+      <li>
+        <p>Occurs check: Givenα=T whereαoccurs in T, report error (no solutions)</p>
+      </li>
+      <li>
+        <p>Decompose pairs: Replace(T1,T2) = (T′1,T′2)with T1=T′1and T2=T′2</p>
+      </li>
+      <li>
+        <p>Decompose functions: Replace(T1⇒T2) = (T′1⇒T′2)with T1=T′1and T2=T′2.</p>
+      </li>
+      <li>
+        <p>Decomposition clash (remaining cases): Given T1=T2 where T1and T2have different constructors, report clash (no solution)</p>
+
+        <p>Examples:(T1,T2) = (T′1⇒T′2); Int= (T1,T2); Int=Bool;(T1⇒T2) =String</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>property of unification algorithm</p>
+
+    <ul>
+      <li>always terminated</li>
+      <li>If error reported, equations have no solution</li>
+      <li>otherwise, it has one or more solutions</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="code-generation">code generation</h2>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_19-09-25.png" style="zoom:50%;" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_19-11-13.png" style="zoom:50%;" /></p>
+
+<p>the specification for Web Assembly is at this link <a href="https://webassembly.github.io/spec/core/exec/index.html">here</a></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_19-10-51.png" style="zoom:50%;" /></p>
+
+<p>a stack machine simulator could be:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">code</span> <span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">Instruction</span><span class="o">]</span>
+<span class="k">var</span> <span class="n">pc</span> <span class="k">:</span> <span class="kt">Int</span> <span class="c1">// program counter</span>
+<span class="k">var</span> <span class="n">local</span> <span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span>  <span class="c1">// for local variables</span>
+<span class="k">var</span> <span class="n">operand</span> <span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span>  <span class="c1">// operand stack</span>
+<span class="k">var</span> <span class="n">top</span> <span class="k">:</span> <span class="kt">Int</span>
+<span class="nf">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> 
+	<span class="n">step</span>
+    <span class="k">def</span> <span class="nf">step</span> <span class="k">=</span> <span class="nf">code</span><span class="o">(</span><span class="n">pc</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="nc">Iadd</span><span class="o">()</span> <span class="k">=&gt;</span>
+            <span class="nf">operand</span><span class="o">(</span><span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="k">=</span> <span class="nf">operand</span><span class="o">(</span><span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="nf">operand</span><span class="o">(</span><span class="n">top</span><span class="o">)</span>
+            <span class="n">top</span> <span class="k">=</span> <span class="n">top</span> <span class="err">­</span> <span class="mi">1</span>  <span class="c1">// two consumed, one produced</span>
+        <span class="k">case</span> <span class="nc">Imul</span><span class="o">()</span> <span class="k">=&gt;</span> 
+            <span class="nf">operand</span><span class="o">(</span><span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="k">=</span> <span class="nf">operand</span><span class="o">(</span><span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">*</span> <span class="nf">operand</span><span class="o">(</span><span class="n">top</span><span class="o">)</span>
+            <span class="n">top</span> <span class="k">=</span> <span class="n">top</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1">// two consumed, one produced</span>
+        <span class="k">case</span> <span class="nf">iconst</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="k">=&gt;</span>
+            <span class="nf">operand</span><span class="o">(</span><span class="n">top</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="k">=</span> <span class="n">c</span> <span class="c1">// put given constant 'c' onto stack</span>
+            <span class="n">top</span> <span class="k">=</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">case</span> <span class="nc">Igetlocal</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="k">=&gt;</span> 
+            <span class="nf">operand</span><span class="o">(</span><span class="n">top</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="k">=</span> <span class="nf">local</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="c1">// from memory onto stack</span>
+            <span class="n">top</span> <span class="k">=</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">1</span> 
+        <span class="k">case</span> <span class="nc">Isetlocal</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="k">=&gt;</span> 
+            <span class="nf">local</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="k">=</span> <span class="nf">operand</span><span class="o">(</span><span class="n">top</span><span class="o">)</span> <span class="c1">// from stack into memory</span>
+            <span class="n">top</span> <span class="k">=</span> <span class="n">top</span> <span class="err">­</span> <span class="mi">1</span>  <span class="c1">// consumed</span>
+        <span class="o">}</span>
+	<span class="nf">if</span> <span class="o">(</span><span class="nf">notJump</span><span class="o">(</span><span class="nf">code</span><span class="o">(</span><span class="n">n</span><span class="o">)))</span>
+		<span class="n">pc</span> <span class="k">=</span> <span class="n">pc</span> <span class="o">+</span> <span class="mi">1</span>   <span class="c1">// by default go to next instructions</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_19-27-41.png" style="zoom:67%;" /></p>
+
+<h3 id="prefix-postfix-infix-notation">prefix, postfix, infix notation</h3>
+
+<p>let f be a binary operation, e~1~, e~2~ two expressions</p>
+
+<ul>
+  <li>in prefix, f e~1~ e~2~, Polish notation</li>
+  <li>in infix, e~1~ f e~2~</li>
+  <li>in postfix, e~1~ e~2~ f Reverse Polish notation (RPN)</li>
+</ul>
+
+<p>for nested expressions, like a * b + c, infix needs parentheses, prefix and postfix no bracket</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>arg.list</th>
+      <th>+(x,y)</th>
+      <th>+(*(x,y),z)</th>
+      <th>+(x,*(y,z))</th>
+      <th>*(x,+(y,z))</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>prefix</td>
+      <td>+ x y</td>
+      <td>+ * x y z</td>
+      <td>+ x * y z</td>
+      <td>* x + y z</td>
+    </tr>
+    <tr>
+      <td>infix</td>
+      <td>x+y</td>
+      <td>x*y + z</td>
+      <td>x + y*z</td>
+      <td>x*(y+z)</td>
+    </tr>
+    <tr>
+      <td>postfix</td>
+      <td>x y +</td>
+      <td>x y * z +</td>
+      <td>x y z * +</td>
+      <td>x y z + **</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>prefix</th>
+      <th>+ + + x y z u</th>
+      <th>+ x + y + z u</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>infix</td>
+      <td>((x + y) + z) + u</td>
+      <td>x + (y + (z + u))</td>
+    </tr>
+    <tr>
+      <td>postfix</td>
+      <td>x y + z + u +</td>
+      <td>x y z u + + +</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>first draw the AST, and then traverse according to the order</p>
+
+<p>below is an example to transform a tree into a prefix, postfix and infix notation:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">enum</span> <span class="nc">Expr</span><span class="k">:</span>
+    <span class="kt">case</span> <span class="kt">Var</span><span class="o">(</span><span class="kt">varID:</span> <span class="kt">String</span><span class="o">)</span>
+    <span class="kt">case</span> <span class="kt">Plus</span><span class="o">(</span><span class="kt">lhs:</span> <span class="kt">Expr</span><span class="o">,</span> <span class="kt">rhs:</span> <span class="kt">Expr</span><span class="o">)</span>
+    <span class="k">case</span> <span class="nc">Times</span><span class="o">(</span><span class="n">lhs</span><span class="k">:</span> <span class="kt">Expr</span><span class="o">,</span> <span class="n">rhs</span><span class="k">:</span> <span class="kt">Expr</span><span class="o">)</span>
+
+<span class="n">enum</span> <span class="nc">Token</span><span class="k">:</span>
+    <span class="kt">case</span> <span class="kt">ID</span><span class="o">(</span><span class="kt">str</span> <span class="kt">:</span> <span class="kt">String</span><span class="o">)</span>
+    <span class="kt">case</span> <span class="kt">Add</span>
+    <span class="k">case</span> <span class="nc">Mul</span>
+    <span class="k">case</span> <span class="n">O</span> <span class="c1">// Opening paren ’(’</span>
+    <span class="k">case</span> <span class="n">C</span> <span class="c1">// Closing paren ’)’</span>
+
+<span class="k">def</span> <span class="nf">prefix</span><span class="o">(</span><span class="n">e</span><span class="k">:</span> <span class="kt">Expr</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Token</span><span class="o">]</span> <span class="k">=</span> <span class="n">e</span> <span class="k">match</span>
+    <span class="k">case</span> <span class="nc">Var</span><span class="o">(</span><span class="n">id</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">List</span><span class="o">(</span><span class="nc">ID</span><span class="o">(</span><span class="n">id</span><span class="o">))</span>
+    <span class="k">case</span> <span class="nc">Plus</span><span class="o">(</span><span class="n">e1</span><span class="o">,</span><span class="n">e2</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Add</span><span class="o">())</span> <span class="o">:::</span> <span class="nf">prefix</span><span class="o">(</span><span class="n">e1</span><span class="o">)</span> <span class="o">:::</span> <span class="nf">prefix</span><span class="o">(</span><span class="n">e2</span><span class="o">)</span>
+    <span class="k">case</span> <span class="nc">Times</span><span class="o">(</span><span class="n">e1</span><span class="o">,</span><span class="n">e2</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Mul</span><span class="o">())</span> <span class="o">:::</span> <span class="nf">prefix</span><span class="o">(</span><span class="n">e1</span><span class="o">)</span> <span class="o">:::</span> <span class="nf">prefix</span><span class="o">(</span><span class="n">e2</span><span class="o">)</span>
+
+<span class="k">def</span> <span class="nf">infix</span><span class="o">(</span><span class="n">e</span><span class="k">:</span> <span class="kt">Expr</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Token</span><span class="o">]</span> <span class="k">=</span> <span class="n">e</span> <span class="k">match</span> <span class="c1">// needs to emit parantheses</span>
+    <span class="k">case</span> <span class="nc">Var</span><span class="o">(</span><span class="n">id</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">List</span><span class="o">(</span><span class="nc">ID</span><span class="o">(</span><span class="n">id</span><span class="o">))</span>
+    <span class="k">case</span> <span class="nc">Plus</span><span class="o">(</span><span class="n">e1</span><span class="o">,</span><span class="n">e2</span><span class="o">)</span> <span class="k">=&gt;</span>
+    	<span class="nc">List</span><span class="o">(</span><span class="nf">O</span><span class="o">())</span> <span class="o">:::</span> <span class="nf">infix</span><span class="o">(</span><span class="n">e1</span><span class="o">)</span> <span class="o">:::</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Add</span><span class="o">())</span> <span class="o">:::</span> <span class="nf">infix</span><span class="o">(</span><span class="n">e2</span><span class="o">)</span> <span class="o">:::</span><span class="nc">List</span><span class="o">(</span><span class="nf">C</span><span class="o">())</span>
+    <span class="k">case</span> <span class="nc">Times</span><span class="o">(</span><span class="n">e1</span><span class="o">,</span><span class="n">e2</span><span class="o">)</span> <span class="k">=&gt;</span>
+    <span class="nc">List</span><span class="o">(</span><span class="nf">O</span><span class="o">())</span> <span class="o">:::</span> <span class="nf">infix</span><span class="o">(</span><span class="n">e1</span><span class="o">)</span> <span class="o">:::</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Mul</span><span class="o">())</span> <span class="o">:::</span> <span class="nf">infix</span><span class="o">(</span><span class="n">e2</span><span class="o">)</span> <span class="o">:::</span><span class="nc">List</span><span class="o">(</span><span class="nf">C</span><span class="o">())</span>
+
+<span class="k">def</span> <span class="nf">postfix</span><span class="o">(</span><span class="n">e</span><span class="k">:</span> <span class="kt">Expr</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Token</span><span class="o">]</span> <span class="k">=</span> <span class="n">e</span> <span class="k">match</span>
+    <span class="k">case</span> <span class="nc">Var</span><span class="o">(</span><span class="n">id</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">List</span><span class="o">(</span><span class="nc">ID</span><span class="o">(</span><span class="n">id</span><span class="o">))</span>
+    <span class="k">case</span> <span class="nc">Plus</span><span class="o">(</span><span class="n">e1</span><span class="o">,</span><span class="n">e2</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nf">postfix</span><span class="o">(</span><span class="n">e1</span><span class="o">)</span> <span class="o">:::</span> <span class="nf">postfix</span><span class="o">(</span><span class="n">e2</span><span class="o">)</span> <span class="o">:::</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Add</span><span class="o">())</span>
+    <span class="k">case</span> <span class="nc">Times</span><span class="o">(</span><span class="n">e1</span><span class="o">,</span><span class="n">e2</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nf">postfix</span><span class="o">(</span><span class="n">e1</span><span class="o">)</span> <span class="o">:::</span> <span class="nf">postfix</span><span class="o">(</span><span class="n">e2</span><span class="o">)</span> <span class="o">:::</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Mul</span><span class="o">())</span>
+</code></pre></div></div>
+
+<p>Lisp, an example of prefix notation</p>
+
+<div class="language-lisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">defun</span> <span class="nv">factorial</span> <span class="p">(</span><span class="nv">n</span><span class="p">)</span>
+    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&lt;=</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="mi">1</span>
+		<span class="p">(</span><span class="nb">*</span> <span class="nv">n</span> <span class="p">(</span><span class="nv">factorial</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)))))</span>
+</code></pre></div></div>
+
+<p>Postscript, an example of post fix language</p>
+
+<div class="language-postscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">/inch</span> <span class="p">{</span><span class="mf">72</span> <span class="nb">mul</span><span class="p">}</span> <span class="nb">def</span>
+<span class="nv">/wedge</span>
+    <span class="p">{</span> <span class="nb">newpath</span>
+        <span class="mf">0</span> <span class="mf">0</span> <span class="nb">moveto</span>
+        <span class="mf">1</span> <span class="mf">0</span> <span class="nb">translate</span>
+        <span class="mf">15</span> <span class="nb">rotate</span>
+        <span class="mf">0</span> <span class="mf">15</span> <span class="nb">sin</span> <span class="nb">translate</span>
+        <span class="mf">0</span> <span class="mf">0</span> <span class="mf">15</span> <span class="nb">sin</span> <span class="nf">-</span> <span class="mf">90</span> <span class="mf">90</span> <span class="nb">arc</span>
+        <span class="nb">closepath</span>
+    <span class="p">}</span> <span class="nb">def</span>
+<span class="nb">gsave</span>
+    <span class="mf">3.75</span> <span class="nf">inch</span> <span class="mf">7.25</span> <span class="nf">inch</span> <span class="nb">translate</span>
+    <span class="mf">1</span> <span class="nf">inch</span> <span class="mf">1</span> <span class="nf">inch</span> <span class="nb">scale</span>
+    <span class="nf">wedge</span> <span class="mf">0.02</span> <span class="nb">setlinewidth</span> <span class="nb">stroke</span>
+<span class="nb">grestore</span>
+<span class="nb">gsave</span>
+</code></pre></div></div>
+
+<h3 id="compiling-expression">compiling expression</h3>
+
+<p>why postfix? can evaluate it using stack</p>
+
+<ul>
+  <li>Evaluating postfix expressions is like running a stack based virtual machine on compiled code</li>
+  <li>Compiling expressions for stack machine is like translating expressions into postfix form</li>
+</ul>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_21-00-14.png" style="zoom:50%;" /></p>
+
+<p>to evaluate e1 * e2 interpret as:</p>
+
+<ul>
+  <li>evaluate e1</li>
+  <li>evaluate e2</li>
+  <li>combines the result using *</li>
+</ul>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compile</span><span class="o">(</span><span class="n">e</span> <span class="k">:</span> <span class="kt">Expr</span><span class="o">)</span> <span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Bytecode</span><span class="o">]</span> <span class="k">=</span> <span class="n">e</span> <span class="k">match</span> <span class="o">{</span> <span class="c1">// ~ postfix printer</span>
+    <span class="k">case</span> <span class="nc">Var</span><span class="o">(</span><span class="n">id</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Igetlocal</span><span class="o">(</span><span class="nf">slotFor</span><span class="o">(</span><span class="n">id</span><span class="o">)))</span>
+    <span class="k">case</span> <span class="nc">Plus</span><span class="o">(</span><span class="n">e1</span><span class="o">,</span><span class="n">e2</span><span class="o">)</span>  <span class="k">=&gt;</span> <span class="nf">compile</span><span class="o">(</span><span class="n">e1</span><span class="o">)</span> <span class="o">:::</span> <span class="nf">compile</span><span class="o">(</span><span class="n">e2</span><span class="o">)</span> <span class="o">:::</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Iadd</span><span class="o">())</span>
+    <span class="k">case</span> <span class="nc">Times</span><span class="o">(</span><span class="n">e1</span><span class="o">,</span><span class="n">e2</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nf">compile</span><span class="o">(</span><span class="n">e1</span><span class="o">)</span> <span class="o">:::</span> <span class="nf">compile</span><span class="o">(</span><span class="n">e2</span><span class="o">)</span> <span class="o">:::</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Imul</span><span class="o">())</span>   
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>to include local variables:</p>
+
+<ul>
+  <li>Assigning indices (called slots) to local variables using function 
+	slotOf : VarSymbol -&gt; {0,1,2,3,…}</li>
+  <li>How to compute the indices?</li>
+  <li>assign them in the order in which they appear in the tree</li>
+</ul>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compile</span><span class="o">(</span><span class="n">e</span> <span class="k">:</span> <span class="kt">Expr</span><span class="o">)</span> <span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Bytecode</span><span class="o">]</span> <span class="k">=</span> <span class="n">e</span> <span class="k">match</span> <span class="o">{</span>
+	<span class="k">case</span> <span class="nc">Var</span><span class="o">(</span><span class="n">id</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Igetlocal</span><span class="o">(</span><span class="nf">slotFor</span><span class="o">(</span><span class="n">id</span><span class="o">)))</span>
+	<span class="o">...</span>	
+<span class="o">}</span>
+<span class="k">def</span> <span class="nf">compileStmt</span><span class="o">(</span><span class="n">s</span> <span class="k">:</span> <span class="kt">Statmt</span><span class="o">)</span> <span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Bytecode</span><span class="o">]</span> <span class="k">=</span> <span class="n">s</span> <span class="k">match</span> <span class="o">{</span>
+	<span class="c1">// id=e</span>
+	<span class="k">case</span> <span class="nc">Assign</span><span class="o">(</span><span class="n">id</span><span class="o">,</span><span class="n">e</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nf">compile</span><span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="o">:::</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Iset_local</span><span class="o">(</span><span class="nf">slotFor</span><span class="o">(</span><span class="n">id</span><span class="o">)))</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_21-20-33.png" style="zoom:50%;" /></p>
+
+<p>compiling control flow:</p>
+
+<p>in Web Assembly, All comparison operators yield 32­bit integer results with 1 representing true and 0 representing false.</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_21-33-37.png" style="zoom:67%;" /></p>
+
+<ul>
+  <li>block: the beginning of a block construct, a sequence of instructions with a label at the end</li>
+  <li>loop: a block with a label at the beginning which may be used to form loops</li>
+  <li>br: branch to a given label in an enclosing construct</li>
+  <li>br_if: conditionally branch to a given label in an enclosing construct</li>
+  <li>return: return zero or more values from this function</li>
+  <li>end: an instruction that marks the end of a block, loop, if, or function</li>
+</ul>
+
+<pre><code class="language-assembly">block $label1 block $label0
+(negated condition code)
+br_if $label0 // to else branch
+(true case code)
+br $label1// done with if
+end $label0// else branch
+(false case code)
+end $label1// end of if
+</code></pre>
+
+<p>or, in web assembly, it provides a shortcut as:</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_21-39-10.png" style="zoom:50%;float:left" /></p>
+
+<p>special tricks for [e1] &amp;&amp; [e2]:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>only need to evluate e1 when e1 == False, similarly for [e1]</td>
+      <td> </td>
+      <td>[e2] when e1 == True</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre><code class="language-assembly">[if (econd) ethenelse eelse] :=
+	block nAfter
+    	block nElse
+    		block nThen
+    			branch(econd, nThen, nElse)
+    		end //nThen:
+    		[ethen]
+    		br nAfter
+    	end //nElse:
+    	[eelse]
+    end //nAfter:
+    [erest]
+
+branch(!e,nThen,nElse) :=
+	branch(e,nElse,nThen)
+
+branch(e1 &amp;&amp; e2,nThen,nElse) :=
+	block nLong
+		branch(e1,nLong,nElse)
+	end //nLong:
+	branch(e2,nThen,nElse)
+
+branch(e1 || e2,nThen,nElse) :=
+	block nLong
+		branch(e1,nThen,nLong)
+	end //nLong:
+	branch(e2,nThen,nElse)
+	
+branch(true,nThen,nElse) :=
+	br nThen
+
+branch(false,nThen,nElse) :=
+	br nElse
+
+branch(b,nThen,nElse) :=	(where b is a local var)
+	get_local #b
+	br_if nThen
+	br nElse
+</code></pre>
+
+<p>we can make a new command as :</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_22-36-30.png" style="zoom:50%;" /></p>
+
+<p>then switch statement could write as:</p>
+
+<pre><code class="language-assembly">[sswitch] nAfter nBreak :=
+block nDefault
+	block nCasen
+		...
+		block nCase1
+			block nTest
+				[e_scrutinee] nTest nBreak
+			end //nTest:
+			tee_local #s(where s is some fresh local of type i32)
+			i32.const c1
+			i32.eq
+			br_if nCase1
+			get_local #s
+			i32.const c2
+			i32.eq
+			br_if nCase2
+			...
+			br nDefault
+		end //nCase1:
+		[e1] nCase2 nAfter
+		...
+	end //nCasen:
+	[en] nDefault nAfter
+end //nDefault:
+[edefault] nAfter nAfter
+</code></pre>
+
+<h2 id="register-optimization">register optimization</h2>
+
+<p>Basic Instructions of Register Machines
+Ri← Mem[Rj]	load
+Mem[Rj] ←Ri	store
+Ri← Rj * Rk	  compute: for an operation *
+Efficient register machine code uses as few loads and stores as possible.</p>
+
+<p>wab assembly: imul.32</p>
+
+<p>register machine: R1 ← Mem[SP]	SP = SP + 4	R2 ← Mem[SP]	R2 ← R1 * R2	Mem[SP] ← R2</p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-12_22-58-51.png" style="zoom:67%;" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-13_14-17-17.png" style="zoom:60%;" /></p>
+
+<p><img src="/assets/images/compiler/Snipaste_2021-12-13_14-18-02.png" style="zoom:60%;" /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#cs" class="page__taxonomy-item p-category" rel="tag">cs</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-01-03T00:00:00+00:00">January 3, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/tech/chrome-extensions/" class="pagination--pager" title="My recommendation for 15 chrome extensions
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a comment</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/chrome_extensions/chrome_extension_store.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tech/chrome-extensions/" rel="permalink">My recommendation for 15 chrome extensions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">前言
+
+Google Chrome 是我用的最多的浏览器。一是因为对google账户的支持和同步，我的很多的密码，以及平时用google email注册登录的网站都需要谷歌来管理，二是因为它支持的各种extensions。这里就介绍几个我常用的extensions吧。
+
+1. Adblock Plus - fre...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tech/build-github-page/" rel="permalink">Build A GitHub Personal Home Page with Jekyll and Minimal Mistake Theme
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  本文将简略介绍如何使用GitHub Pages来创建一个免费的静态个人网页。具体将分为三个部分：如何在GitHub上创建个人网页，如何使用minimal mistake主题来美化个人主页，如何使用Jekyll本地调试网页。
+
+
+GitHub创建个人主页
+
+具体步骤可参照 Quickstart for Git...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tech/pdf_reviews/" rel="permalink">6 PDF Readers Reviews
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">前言
+
+pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅是一个学习工具。对我来说，它的大部分使用场景都是读paper或者是读课件读textbook，白嫖惯了不怎么有买纸质书的习惯。我也有ipad，但是notability用来记笔记我的字太丑，加上每次强迫症画条直线都要半天，标注结束都忘记自己要干嘛了。因此...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/automatic-cat-feeder/" rel="permalink">automatic cat feeder
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">The automatic cat feeder is the project I done for my embeded system design course.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/yzouag" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Yiwen ZOU. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://yzouag.github.io/cs/complier_design/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/cs/complier_design"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yzouag.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

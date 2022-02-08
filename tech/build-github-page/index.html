@@ -1,0 +1,823 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Build A GitHub Personal Home Page with Jekyll and Minimal Mistake Theme - Wilson ZOU’s Home Page</title>
+<meta name="description" content="本文将简略介绍如何使用GitHub Pages来创建一个免费的静态个人网页。具体将分为三个部分：如何在GitHub上创建个人网页，如何使用minimal mistake主题来美化个人主页，如何使用Jekyll本地调试网页。   GitHub创建个人主页  具体步骤可参照 Quickstart for GitHub Pages  简单来说分为三步：          新建一个public repository，名字设置为USERNAME.github.io，如图：            其他设置均可维持default，结果是这样：                 此时你可以选择直接本地init一个repo然后传上去，当然也可以通过Settings-&gt; Pages -&gt; choose a theme，在这里就可以自己挑选一个喜欢的主题然后开始往里面填充内容，如图：                 选择后直接commit changes这时我们的网站就设置完成了，在repo的右下角About，Release等等有一个Environment显示Active，点击进入就能看到我们的网站部署成功了，这个网页默认是USERNAME.github.io：                  在repository中，现在有两个文件_config.yaml和index.md。GitHub使用Jekyll来build网站页面，最终要的一个config文件就是_config.yml，现在里面设置了theme为XXX，所以我们的网站就有了这个主题的样式。同时我们的main page也不一定是index.html了，因为Jekyll支持将markdown格式转成网页格式，这将帮助我们更快的编写blog，markdown比起html还是方便很多的。  使用Minimal Mistake主题  完成了以上步骤，我们可以得到一个基础的网站了，免费的域名所有人都能访问到。但是…并不好看啊，而且功能好少，我想要更多的不同的分页面可以跳来跳去，我想要更多的艺术细节和更多不同样式的页面。  那我说，你可以全部自己手写网页，就好像别的各路大神写的精美绝伦的静态网页一样…当然，我是做不到啦，所以还是得嫖别人现成的。我选择的一个主题是Minimal Mistake。在官网上你可以看到非常细致的教程，而且作者一直有持续更新，所以不用担心bug或者缺少对新技术的支持。不仅如此，作者也会亲自下场回答问题，所以有不会的也可以写一个issue或者搜索minimal mistake + 问题，网上有很多的解答。  简单来讲，一个最快的方式就是直接Fork他的repo，具体步骤如下：          进入repo,直接点击右上角的fork，对，就在星星旁边，这样你就能得到一个repo                 这时候你可以回头把自己之前的玩具网站删掉，delete那个repo或者重命名，并将现在这个minimal mistake重命名为USERNAME.github.io这样你就可以获得一个全新的模板：            现在的网页还是空空如也，但是你可以根据quick start guide的tutorial，自己来定制网页了。  使用Jekyll本地调试网页  如果说，每次我们改一点点东西，都需要push到GitHub上，等它build好才能看到效果，那速度也太慢了，所以我们可以在本地搭建一个测试环境，这样就只要一个功能完成再push一次，大大节约了我们debug的时间。  这部分内容主要参照Jekyll Doc编写，有兴趣的朋友也可以直接按照官网的教学来。  因为我害怕环境之间的冲突，所以额外创建了一个WSL2的Ubuntu20.04LTS来搭建这个环境，windows和Mac上可能会有所不同。而且讲道理linux上装这些东西真的方便好多好多…          安装prerequisite：      # 安装Ruby sudo apt-get install ruby-full build-essential zlib1g-dev     # 为避免在root user里安装Ruby Gems，可以把Gems装在home里 echo &#39;# Install Ruby Gems to ~/gems&#39; &gt;&gt; ~/.bashrc echo &#39;export GEM_HOME=&quot;$HOME/gems&quot;&#39; &gt;&gt; ~/.bashrc echo &#39;export PATH=&quot;$HOME/gems/bin:$PATH&quot;&#39; &gt;&gt; ~/.bashrc source ~/.bashrc     # 前面都成功的话，就可以install jekyll和bundle了 gem install jekyll bundler                安装成功之后，就可以在本地build一个Jekyll project了：      # clone 自己的repo git@github.com:wilson99Z/wilson99Z.github.io.git     # 在 http://localhost:4000 上试运行网站 cd USERNAME.github.io bundle exec jekyll serve     # 当然，如果想全新创建一个Jekyll project，执行如下命令，此时就会创建一个myblog的project jekyll new myblog           结语  到此我简单介绍了一下搭建一个Jekyll GitHub Pages，接下来的blogs我会具体介绍minimal mistake的一些具体的网页元素的使用方法。感谢你看到这里，点个赞再走吧&gt;.&lt;">
+
+
+  <meta name="author" content="Wilson ZOU">
+  
+  <meta property="article:author" content="Wilson ZOU">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Wilson ZOU's Home Page">
+<meta property="og:title" content="Build A GitHub Personal Home Page with Jekyll and Minimal Mistake Theme">
+<meta property="og:url" content="https://yzouag.github.io/tech/build-github-page/">
+
+
+  <meta property="og:description" content="本文将简略介绍如何使用GitHub Pages来创建一个免费的静态个人网页。具体将分为三个部分：如何在GitHub上创建个人网页，如何使用minimal mistake主题来美化个人主页，如何使用Jekyll本地调试网页。   GitHub创建个人主页  具体步骤可参照 Quickstart for GitHub Pages  简单来说分为三步：          新建一个public repository，名字设置为USERNAME.github.io，如图：            其他设置均可维持default，结果是这样：                 此时你可以选择直接本地init一个repo然后传上去，当然也可以通过Settings-&gt; Pages -&gt; choose a theme，在这里就可以自己挑选一个喜欢的主题然后开始往里面填充内容，如图：                 选择后直接commit changes这时我们的网站就设置完成了，在repo的右下角About，Release等等有一个Environment显示Active，点击进入就能看到我们的网站部署成功了，这个网页默认是USERNAME.github.io：                  在repository中，现在有两个文件_config.yaml和index.md。GitHub使用Jekyll来build网站页面，最终要的一个config文件就是_config.yml，现在里面设置了theme为XXX，所以我们的网站就有了这个主题的样式。同时我们的main page也不一定是index.html了，因为Jekyll支持将markdown格式转成网页格式，这将帮助我们更快的编写blog，markdown比起html还是方便很多的。  使用Minimal Mistake主题  完成了以上步骤，我们可以得到一个基础的网站了，免费的域名所有人都能访问到。但是…并不好看啊，而且功能好少，我想要更多的不同的分页面可以跳来跳去，我想要更多的艺术细节和更多不同样式的页面。  那我说，你可以全部自己手写网页，就好像别的各路大神写的精美绝伦的静态网页一样…当然，我是做不到啦，所以还是得嫖别人现成的。我选择的一个主题是Minimal Mistake。在官网上你可以看到非常细致的教程，而且作者一直有持续更新，所以不用担心bug或者缺少对新技术的支持。不仅如此，作者也会亲自下场回答问题，所以有不会的也可以写一个issue或者搜索minimal mistake + 问题，网上有很多的解答。  简单来讲，一个最快的方式就是直接Fork他的repo，具体步骤如下：          进入repo,直接点击右上角的fork，对，就在星星旁边，这样你就能得到一个repo                 这时候你可以回头把自己之前的玩具网站删掉，delete那个repo或者重命名，并将现在这个minimal mistake重命名为USERNAME.github.io这样你就可以获得一个全新的模板：            现在的网页还是空空如也，但是你可以根据quick start guide的tutorial，自己来定制网页了。  使用Jekyll本地调试网页  如果说，每次我们改一点点东西，都需要push到GitHub上，等它build好才能看到效果，那速度也太慢了，所以我们可以在本地搭建一个测试环境，这样就只要一个功能完成再push一次，大大节约了我们debug的时间。  这部分内容主要参照Jekyll Doc编写，有兴趣的朋友也可以直接按照官网的教学来。  因为我害怕环境之间的冲突，所以额外创建了一个WSL2的Ubuntu20.04LTS来搭建这个环境，windows和Mac上可能会有所不同。而且讲道理linux上装这些东西真的方便好多好多…          安装prerequisite：      # 安装Ruby sudo apt-get install ruby-full build-essential zlib1g-dev     # 为避免在root user里安装Ruby Gems，可以把Gems装在home里 echo &#39;# Install Ruby Gems to ~/gems&#39; &gt;&gt; ~/.bashrc echo &#39;export GEM_HOME=&quot;$HOME/gems&quot;&#39; &gt;&gt; ~/.bashrc echo &#39;export PATH=&quot;$HOME/gems/bin:$PATH&quot;&#39; &gt;&gt; ~/.bashrc source ~/.bashrc     # 前面都成功的话，就可以install jekyll和bundle了 gem install jekyll bundler                安装成功之后，就可以在本地build一个Jekyll project了：      # clone 自己的repo git@github.com:wilson99Z/wilson99Z.github.io.git     # 在 http://localhost:4000 上试运行网站 cd USERNAME.github.io bundle exec jekyll serve     # 当然，如果想全新创建一个Jekyll project，执行如下命令，此时就会创建一个myblog的project jekyll new myblog           结语  到此我简单介绍了一下搭建一个Jekyll GitHub Pages，接下来的blogs我会具体介绍minimal mistake的一些具体的网页元素的使用方法。感谢你看到这里，点个赞再走吧&gt;.&lt;">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-11-09T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://yzouag.github.io/tech/build-github-page/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Yiwen ZOU",
+      "url": "https://yzouag.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Wilson ZOU's Home Page Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- Mathjax Support -->
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/website_icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/website_icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/website_icon/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/website_icon/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/website_icon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/website_icon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/website_icon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/rabbit.png" alt="Newbie for Techs"></a>
+        
+        <a class="site-title" href="/">
+          Newbie for Techs
+          <span class="site-subtitle">learning is a life-long journey</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/project/">Project</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/tech/">Techs Review</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/cs/">Academy & Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about">About Me</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://yzouag.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Wilson ZOU" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://yzouag.github.io/" itemprop="url">Wilson ZOU</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am currently a final year CSE student in HKUST and now is eagerly looking for a graduate school</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Hong Kong SAR, China</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:3310189877@qq.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/yzouag" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://music.163.com/#/user/home?id=303522934" rel="nofollow noopener noreferrer me"><i class="fas fa-music" aria-hidden="true"></i><span class="label">NetEase Music</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">links</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/">Home</a></li>
+          
+            <li><a href="/categories">Post</a></li>
+          
+            <li><a href="/projects">Project</a></li>
+          
+            <li><a href="/tech-reviews">Techs Review</a></li>
+          
+            <li><a href="/course-summary">CS courses</a></li>
+          
+            <li><a href="/about">About Me</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Build A GitHub Personal Home Page with Jekyll and Minimal Mistake Theme">
+    <meta itemprop="description" content="  本文将简略介绍如何使用GitHub Pages来创建一个免费的静态个人网页。具体将分为三个部分：如何在GitHub上创建个人网页，如何使用minimal mistake主题来美化个人主页，如何使用Jekyll本地调试网页。GitHub创建个人主页具体步骤可参照 Quickstart for GitHub Pages简单来说分为三步：      新建一个public repository，名字设置为USERNAME.github.io，如图：        其他设置均可维持default，结果是这样：            此时你可以选择直接本地init一个repo然后传上去，当然也可以通过Settings-&gt; Pages -&gt; choose a theme，在这里就可以自己挑选一个喜欢的主题然后开始往里面填充内容，如图：            选择后直接commit changes这时我们的网站就设置完成了，在repo的右下角About，Release等等有一个Environment显示Active，点击进入就能看到我们的网站部署成功了，这个网页默认是USERNAME.github.io：          在repository中，现在有两个文件_config.yaml和index.md。GitHub使用Jekyll来build网站页面，最终要的一个config文件就是_config.yml，现在里面设置了theme为XXX，所以我们的网站就有了这个主题的样式。同时我们的main page也不一定是index.html了，因为Jekyll支持将markdown格式转成网页格式，这将帮助我们更快的编写blog，markdown比起html还是方便很多的。使用Minimal Mistake主题完成了以上步骤，我们可以得到一个基础的网站了，免费的域名所有人都能访问到。但是…并不好看啊，而且功能好少，我想要更多的不同的分页面可以跳来跳去，我想要更多的艺术细节和更多不同样式的页面。那我说，你可以全部自己手写网页，就好像别的各路大神写的精美绝伦的静态网页一样…当然，我是做不到啦，所以还是得嫖别人现成的。我选择的一个主题是Minimal Mistake。在官网上你可以看到非常细致的教程，而且作者一直有持续更新，所以不用担心bug或者缺少对新技术的支持。不仅如此，作者也会亲自下场回答问题，所以有不会的也可以写一个issue或者搜索minimal mistake + 问题，网上有很多的解答。简单来讲，一个最快的方式就是直接Fork他的repo，具体步骤如下：      进入repo,直接点击右上角的fork，对，就在星星旁边，这样你就能得到一个repo            这时候你可以回头把自己之前的玩具网站删掉，delete那个repo或者重命名，并将现在这个minimal mistake重命名为USERNAME.github.io这样你就可以获得一个全新的模板：      现在的网页还是空空如也，但是你可以根据quick start guide的tutorial，自己来定制网页了。使用Jekyll本地调试网页如果说，每次我们改一点点东西，都需要push到GitHub上，等它build好才能看到效果，那速度也太慢了，所以我们可以在本地搭建一个测试环境，这样就只要一个功能完成再push一次，大大节约了我们debug的时间。这部分内容主要参照Jekyll Doc编写，有兴趣的朋友也可以直接按照官网的教学来。因为我害怕环境之间的冲突，所以额外创建了一个WSL2的Ubuntu20.04LTS来搭建这个环境，windows和Mac上可能会有所不同。而且讲道理linux上装这些东西真的方便好多好多…      安装prerequisite：    # 安装Rubysudo apt-get install ruby-full build-essential zlib1g-dev   # 为避免在root user里安装Ruby Gems，可以把Gems装在home里echo &#39;# Install Ruby Gems to ~/gems&#39; &gt;&gt; ~/.bashrcecho &#39;export GEM_HOME=&quot;$HOME/gems&quot;&#39; &gt;&gt; ~/.bashrcecho &#39;export PATH=&quot;$HOME/gems/bin:$PATH&quot;&#39; &gt;&gt; ~/.bashrcsource ~/.bashrc   # 前面都成功的话，就可以install jekyll和bundle了gem install jekyll bundler            安装成功之后，就可以在本地build一个Jekyll project了：    # clone 自己的repogit@github.com:wilson99Z/wilson99Z.github.io.git   # 在 http://localhost:4000 上试运行网站cd USERNAME.github.iobundle exec jekyll serve   # 当然，如果想全新创建一个Jekyll project，执行如下命令，此时就会创建一个myblog的projectjekyll new myblog      结语到此我简单介绍了一下搭建一个Jekyll GitHub Pages，接下来的blogs我会具体介绍minimal mistake的一些具体的网页元素的使用方法。感谢你看到这里，点个赞再走吧&gt;.&lt;">
+    <meta itemprop="datePublished" content="2021-11-09T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://yzouag.github.io/tech/build-github-page/" class="u-url" itemprop="url">Build A GitHub Personal Home Page with Jekyll and Minimal Mistake Theme
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> List of content</h4></header>
+              <ul class="toc__menu"><li><a href="#github创建个人主页">GitHub创建个人主页</a></li><li><a href="#使用minimal-mistake主题">使用Minimal Mistake主题</a></li><li><a href="#使用jekyll本地调试网页">使用Jekyll本地调试网页</a></li><li><a href="#结语">结语</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <blockquote>
+  <p>本文将简略介绍如何使用GitHub Pages来创建一个免费的静态个人网页。具体将分为三个部分：如何在GitHub上创建个人网页，如何使用minimal mistake主题来美化个人主页，如何使用Jekyll本地调试网页。</p>
+</blockquote>
+
+<h2 id="github创建个人主页">GitHub创建个人主页</h2>
+
+<p>具体步骤可参照 <a href="https://docs.github.com/en/pages/quickstart">Quickstart for GitHub Pages</a></p>
+
+<p>简单来说分为三步：</p>
+
+<ol>
+  <li>
+    <p>新建一个public repository，名字设置为<code class="language-plaintext highlighter-rouge">USERNAME.github.io</code>，如图：</p>
+
+    <p><img src="\assets\images\github_pages\screenshot1.png" alt="" /></p>
+
+    <p>其他设置均可维持default，结果是这样：</p>
+
+    <p><img src="\assets\images\github_pages\screenshot2.png" alt="" /></p>
+  </li>
+  <li>
+    <p>此时你可以选择直接本地init一个repo然后传上去，当然也可以通过<code class="language-plaintext highlighter-rouge">Settings</code>-&gt; <code class="language-plaintext highlighter-rouge">Pages</code> -&gt; <code class="language-plaintext highlighter-rouge">choose a theme</code>，在这里就可以自己挑选一个喜欢的主题然后开始往里面填充内容，如图：</p>
+
+    <p><img src="\assets\images\github_pages\screenshot3.png" alt="" /></p>
+  </li>
+  <li>
+    <p>选择后直接commit changes这时我们的网站就设置完成了，在repo的右下角About，Release等等有一个Environment显示Active，点击进入就能看到我们的网站部署成功了，这个网页默认是<code class="language-plaintext highlighter-rouge">USERNAME.github.io</code>：</p>
+
+    <p><img src="\assets\images\github_pages\screenshot4.png" alt="" /></p>
+
+    <p><img src="\assets\images\github_pages\screenshot5.png" alt="" /></p>
+  </li>
+</ol>
+
+<p><em>在repository中，现在有两个文件<code class="language-plaintext highlighter-rouge">_config.yaml</code>和<code class="language-plaintext highlighter-rouge">index.md</code>。GitHub使用Jekyll来build网站页面，最终要的一个config文件就是<code class="language-plaintext highlighter-rouge">_config.yml</code>，现在里面设置了theme为XXX，所以我们的网站就有了这个主题的样式。同时我们的main page也不一定是<code class="language-plaintext highlighter-rouge">index.html</code>了，因为Jekyll支持将markdown格式转成网页格式，这将帮助我们更快的编写blog，markdown比起html还是方便很多的。</em></p>
+
+<h2 id="使用minimal-mistake主题">使用Minimal Mistake主题</h2>
+
+<p>完成了以上步骤，我们可以得到一个基础的网站了，免费的域名所有人都能访问到。但是…并不好看啊，而且功能好少，我想要更多的不同的分页面可以跳来跳去，我想要更多的艺术细节和更多不同样式的页面。</p>
+
+<p>那我说，你可以全部自己手写网页，就好像别的各路大神写的精美绝伦的静态网页一样…当然，我是做不到啦，所以还是得嫖别人现成的。我选择的一个主题是<a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistake</a>。在官网上你可以看到非常细致的教程，而且作者一直有持续更新，所以不用担心bug或者缺少对新技术的支持。不仅如此，作者也会亲自下场回答问题，所以有不会的也可以写一个issue或者搜索minimal mistake + 问题，网上有很多的解答。</p>
+
+<p>简单来讲，一个最快的方式就是直接Fork他的repo，具体步骤如下：</p>
+
+<ol>
+  <li>
+    <p>进入<a href="https://github.com/mmistakes/minimal-mistakes">repo</a>,直接点击右上角的fork，对，就在星星旁边，这样你就能得到一个repo</p>
+
+    <p><img src="\assets\images\github_pages\screenshot6.png" alt="" /></p>
+  </li>
+  <li>
+    <p>这时候你可以回头把自己之前的玩具网站删掉，delete那个repo或者重命名，并将现在这个minimal mistake重命名为<code class="language-plaintext highlighter-rouge">USERNAME.github.io</code>这样你就可以获得一个全新的模板：</p>
+
+    <p><img src="\assets\images\github_pages\screenshot7.png" alt="" /></p>
+  </li>
+</ol>
+
+<p>现在的网页还是空空如也，但是你可以根据quick start guide的tutorial，自己来定制网页了。</p>
+
+<h2 id="使用jekyll本地调试网页">使用Jekyll本地调试网页</h2>
+
+<p>如果说，每次我们改一点点东西，都需要push到GitHub上，等它build好才能看到效果，那速度也太慢了，所以我们可以在本地搭建一个测试环境，这样就只要一个功能完成再push一次，大大节约了我们debug的时间。</p>
+
+<p>这部分内容主要参照<a href="https://jekyllrb.com/docs/">Jekyll Doc</a>编写，有兴趣的朋友也可以直接按照官网的教学来。</p>
+
+<p>因为我害怕环境之间的冲突，所以额外创建了一个WSL2的Ubuntu20.04LTS来搭建这个环境，windows和Mac上可能会有所不同。而且讲道理linux上装这些东西真的方便好多好多…</p>
+
+<ol>
+  <li>
+    <p>安装prerequisite：</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安装Ruby</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>ruby-full build-essential zlib1g-dev
+   
+<span class="c"># 为避免在root user里安装Ruby Gems，可以把Gems装在home里</span>
+<span class="nb">echo</span> <span class="s1">'# Install Ruby Gems to ~/gems'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s1">'export GEM_HOME="$HOME/gems"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s1">'export PATH="$HOME/gems/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
+   
+<span class="c"># 前面都成功的话，就可以install jekyll和bundle了</span>
+gem <span class="nb">install </span>jekyll bundler
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>安装成功之后，就可以在本地build一个Jekyll project了：</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># clone 自己的repo</span>
+git@github.com:wilson99Z/wilson99Z.github.io.git
+   
+<span class="c"># 在 http://localhost:4000 上试运行网站</span>
+<span class="nb">cd </span>USERNAME.github.io
+bundle <span class="nb">exec </span>jekyll serve
+   
+<span class="c"># 当然，如果想全新创建一个Jekyll project，执行如下命令，此时就会创建一个myblog的project</span>
+jekyll new myblog
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="结语">结语</h2>
+
+<p>到此我简单介绍了一下搭建一个Jekyll GitHub Pages，接下来的blogs我会具体介绍minimal mistake的一些具体的网页元素的使用方法。感谢你看到这里，点个赞再走吧&gt;.&lt;</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#tech" class="page__taxonomy-item p-category" rel="tag">tech</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-11-09T00:00:00+00:00">November 9, 2021</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/tech/pdf_reviews/" class="pagination--pager" title="6 PDF Readers Reviews
+">Previous</a>
+    
+    
+      <a href="/tech/chrome-extensions/" class="pagination--pager" title="My recommendation for 15 chrome extensions
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a comment</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/compiler/header.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cs/complier_design/" rel="permalink">HKUST COMP4901U Computer Language Processing and Compiler Design
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          27 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">compiler is a very important course as a CS student, though my performance is bad in this course, I do not regret to take it…
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/chrome_extensions/chrome_extension_store.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tech/chrome-extensions/" rel="permalink">My recommendation for 15 chrome extensions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">前言
+
+Google Chrome 是我用的最多的浏览器。一是因为对google账户的支持和同步，我的很多的密码，以及平时用google email注册登录的网站都需要谷歌来管理，二是因为它支持的各种extensions。这里就介绍几个我常用的extensions吧。
+
+1. Adblock Plus - fre...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tech/pdf_reviews/" rel="permalink">6 PDF Readers Reviews
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">前言
+
+pdf阅读器对我来说是非常重要的学习工具，但同时它也仅仅是一个学习工具。对我来说，它的大部分使用场景都是读paper或者是读课件读textbook，白嫖惯了不怎么有买纸质书的习惯。我也有ipad，但是notability用来记笔记我的字太丑，加上每次强迫症画条直线都要半天，标注结束都忘记自己要干嘛了。因此...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/automatic-cat-feeder/" rel="permalink">automatic cat feeder
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">The automatic cat feeder is the project I done for my embeded system design course.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/yzouag" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Yiwen ZOU. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://yzouag.github.io/tech/build-github-page/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/tech/build-github-page"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yzouag.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
